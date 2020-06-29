@@ -1,0 +1,348 @@
+<!doctype html>
+<html>
+   <head>
+   <meta charset="utf-8">
+   <meta name="keywords" content="js,JS,个人网站,谭虹,tanhong,网站,设计,主页,重庆师范大学谭虹,沙坪坝,计信,计算机科学与技术,凤鸣中学谭虹,重庆,云阳。" />
+   <meta name="author" content="谭虹" />
+   <meta name="discription" content="这是一个自己制作的第二个个人网站，运用html5开发，使用的是css，js样式。/">
+   <meta http-equiv="refresh" content="600" />
+   <title>我的学校</title>
+   <style type="text/css">
+body {
+}
+#container {
+	width: 1200px;     /*整个页面宽为1200px*/
+	margin: 0 auto;			/*整个网页版面居中 */
+}
+.img {/*对选项菜单里面的图片进行设置*/
+	width: 40px;/*图片宽40px*/
+	height: 45px;/*图片高度为45px*/
+	margin-top: 15px;/*图片外边距，px距离上方15px*/
+	margin-left: 8px;/*图片距离左边8px*/
+}
+.div3, .div4, .div5, .div6, .div7 {/*对菜单选项进行设置*/
+	width: 70px;/*宽70px*/
+	height: 70px;/*高70px*/
+	-webkit-border-radius: 45px;
+	-o-border-radius: 45px;
+	-moz-border-radius: 45px;
+	border-radius: 45px;/*圆角显示，这样设置之后就可以达到圆的效果*/
+	text-align: center;/*里面的内容居中显示*/
+	float: left;/*左浮动，让div横排显示*/
+	margin-left: 25px;/*左边外边距25px，各元素之间产生距离*/
+	opacity: 0.7;/*透明度为0.7*/
+}
+.div3:hover, .div4:hover, .div5:hover, .div6:hover, .div7:hover {/*当鼠标移到元素上方产生的效果*/
+	transform: rotate(-10deg);/*倾斜逆时针10度*/
+	opacity: 1;/*透明度为不透明*/
+}
+.topcontent {
+	width: 1200px;/**宽度**/
+	height: 150px/**高度**/
+}
+.soft-embossed {
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);
+	-moz-box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);
+	box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);/**阴影效果**/
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;/**边框圆角**/
+}
+#leftcontent {
+	font-size: 24px;/**字体大小**/
+	font-family: 楷体;/**字体样式**/
+	float: left;/**左浮动**/
+	border-left: 7px #F66 dashed;/**边线**/
+	border-top: 7px #F66 dashed;/**边线**/
+	width: 820px;/**宽度**/
+	height: 710px;/**高度**/
+	margin-right: 10px;
+	-webkit-border-radius: 50px 0px 50px 0px;
+	-o-border-radius: 50px 0px 50px 0px;
+	-moz-border-radius: 50px 0px 50px 0px;/*浏览器的兼容性*/
+	border-radius: 50px 0px 50px 0px;/*圆角显示，这样设置之后就可以达到圆的效果*/
+	-moz-box-shadow: 5px 5px 5px #999 inset;
+	-webkit-box-shadow: 5px 5px 5px #999 inset;
+	-o-box-shadow: 5px 5px 5px #999 inset;/**浏览器兼容性**/
+	box-shadow: 5px 5px 5px #999 inset;/**边框阴影**/
+}
+#rightcontent {
+	font-size: 24px;/**字体大小**/
+	font-family: 楷体;/**字体样式**/
+	float: right;/**右浮动**/
+	border-right: 7px #FFFF66 dashed;/**边线**/
+	border-bottom: 7px #FFFF66 dashed;/**边线**/
+	width: 900px;/**宽度**/
+	height: 660px;/**高度**/
+	-webkit-border-radius: 50px 0px 50px 0px;
+	-moz-border-radius: 50px 0px 50px 0px;
+	-o-border-radius: 50px 0px 50px 0px;
+	border-radius: 50px 0px 50px 0px;
+	;/*圆角显示，这样设置之后就可以达到圆的效果*/
+	-moz-box-shadow: -5px -5px 5px #999 inset;
+	-webkit-box-shadow: -5px -5px 5px #999 inset;
+	-o-box-shadow: -5px -5px 5px #999 inset;/**浏览器兼容性**/
+	box-shadow: -5px -5px 5px #999 inset;/**边框阴影**/
+}
+.a {
+	width: 0, auto;
+	height: 30px;/**高度**/
+	font-family: 华文行楷;/**字体样式**/
+	font-size: 40px;/**字体大小**/
+	text-align: center;/**居中**/
+	color: #090;/**颜色**/
+	text-shadow: 5px 5px 0 #666, 7px 7px 0 #eee;/**阴影效果**/
+}
+.b {
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);
+	-moz-box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);
+	box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);/**阴影效果**/
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;/**边框圆角**/
+	float: left;/**左浮动**/
+}
+.c {
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);
+	-moz-box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);
+	box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);/**阴影效果**/
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;/**边框圆角**/
+	float: right;/**右浮动**/
+}
+.img1 {
+	cursor: pointer;
+	transition: all 0.6s;
+	opacity: 0.7;/*透明度为0.7*/
+}
+.img1:hover {
+	transform: scale(1.4);
+	opacity: 1;/*透明度为不透明*/
+}
+.d {
+	width: 0, auto;
+	height: 30px;/**高度**/
+	font-family: 华文行楷;/**字体样式**/
+	font-size: 40px;/**字体大小**/
+	text-align: center;/**居中**/
+	color: #F30;/**颜色**/
+	text-shadow: 5px 5px 0 #666, 7px 7px 0 #eee;/**阴影效果**/
+}
+.e {
+	font-family: 华文行楷;/**字体样式**/
+	font-size: 30px;/**字体大小**/
+}
+.img2 {/*对菜单选项进行设置*/
+	opacity: 0.7;/*透明度为0.7*/
+	transition: all 0.6s;/**速度**/
+}
+.img2:hover {/*当鼠标移到元素上方产生的效果*/
+	transform: rotate(-10deg);/*倾斜逆时针10度*/
+	opacity: 1;/*透明度为不透明*/
+}
+.img3 {/*对菜单选项进行设置*/
+	opacity: 0.7;/*透明度为0.7*/
+	transition: all 0.6s;/**速度**/
+}
+.img3:hover {/*当鼠标移到元素上方产生的效果*/
+	transform: rotate(10deg);/*倾斜逆时针10度*/
+	opacity: 1;/*透明度为不透明*/
+}
+#footer {
+	float: left;/**左浮动**/
+	width: 800px;/**宽度**/
+	height: 30px;/**高度**/
+	margin-left: 200px;/**外部左边距**/
+	margin-right: 200px;/**外部右边距**/
+	border: solid #000000 1px;/**边线**/
+	font-size: 20px;/**字体大小**/
+	background-color: #cfc;/**字体颜色**/
+	text-align: center;/**居中**/
+	border-radius: 25px 25px 0px 0px;/*圆角*/
+	font-family: 华文行楷;/**字体样式**/
+	padding-top: 10px;/**字体大小**/
+}
+a:hover {
+	color: #ffffff;
+	text-shadow: 0 0 10px red;
+}    /*当鼠标移上去的时候,文字变颜色，再加上阴影效果*/
+.time {
+	width: 700;/*宽度*/
+	height: 30px;/*高度*/
+	font-size: 24px;/*字体大小*/
+	float: right;/*右浮动*/
+}
+.hang {
+	height: 200px;/*高度*/
+	width: 350px;/*宽度*/
+	float: right;/*右浮动*/
+}
+.con {
+	height: 40px;/*高度*/
+	width: 100%;/*宽度*/
+	overflow: hidden;/*隐藏溢出*/
+	position: relative;
+	background: #9fc;/*背景颜色*/
+}
+.nav_u {
+	height: 26px;/*高度*/
+	font: 22px/26px "宋体";
+	font-style: italic;
+	font-weight: bold;/*边线粗细*/
+	color: #333;/*颜色*/
+	position: relative;/*相对位置*/
+}
+.nav_d {
+	height: 14px;/*高度*/
+	font: 12px/12px "宋体";
+	color: #333;/*颜色*/
+	position: relative;/*相对位置*/
+}
+.pos {
+	position: relative;/*相对位置*/
+	left: 180px;
+}
+.con a {
+	text-decoration: none;/*文字装饰无*/
+	display: block;
+	color: #666/*颜色*/
+}
+.nav_ub {
+	width: 100%;
+	height: 26px;/*高度*/
+	position: absolute;/*绝对位置*/
+	top: 0px;
+	background: #fff;/*背景颜色*/
+}
+.nav_db {
+	width: 100%;/*宽度*/
+	height: 14px;/*高度*/
+	position: absolute;/*绝对位置*/
+	bottom: 0px;
+	background: #fff;/*背景颜色*/
+}
+</style>
+   <script src="js/jquery.js"></script>
+   <script>
+$(document).ready(function(){
+	$(".con").prepend('<div class="nav_ub"></div><div class="nav_db"></div>')
+	$(".con").hover(function(){
+		$(this).children(".nav_ub").stop().animate({top:-26},300);
+		$(this).find(".pos").stop().animate({left:220},250);
+		$(this).children(".nav_db").stop().animate({bottom:-14},300);
+		$(this).find(".pos").stop().animate({left:220},250);
+	},function(){
+		$(this).children(".nav_ub").stop().animate({top:0},300);
+		$(this).find(".pos").stop().animate({left:200},250);
+		$(this).children(".nav_db").stop().animate({bottom:0},300);
+		$(this).find(".pos").stop().animate({left:200},250);
+	});
+});/*右边导航栏*/
+   </script>
+   </head>
+
+   <body>
+   <div id="container"> <img class="soft-embossed" src="img/4.png">
+     <div class="topcontent"> <a href="home.html" style="color: #F00"><!--第一个按钮设置-->
+       <div class="div3" style="background-color: #999"><!--运用类选择器第div3,同时用行内样式设置背景颜色--> 
+       <img src="img/7.png" class="img" width,200px> <br>
+       <br>
+       首页 </div>
+       </a> <a href="school.html" style="color:#936"><!--第三个按钮设置-->
+       <div class="div5" style="background-color: #999"><!--运用类选择器第div5,同时用行内样式设置背景颜色--> 
+         <img src="img/8.png" class="img"> <br>
+         <br>
+         我的学校 </div>
+       </a> <a href="hometown.html" style="color:#606 "><!--第四个按钮设置-->
+       <div class="div6" style="background-color: #999"><!--运用类选择器第div6,同时用行内样式设置背景颜色--> 
+         <img src="img/10.png" class="img"> <br>
+         <br>
+         我的家乡 </div>
+       </a> <a href="index.html" style="color: #000 "><!--第六个按钮设置-->
+       <div class="div7" style="background-color: #999 "><!--运用类选择器第div7,同时用行内样式设置背景颜色--> 
+         <img src="img/12.png" class="img"> <br>
+         <br>
+         返回封面 </div>
+       </a> <a>
+       <div class="time"> <span id=localtime></span> 
+         <script type="text/javascript">
+function showLocale(objD)
+{
+	var str,colorhead,colorfoot;
+	var yy = objD.getYear();
+	if(yy<1900) yy = yy+1900;
+	var MM = objD.getMonth()+1;
+	if(MM<10) MM = '0' + MM;
+	var dd = objD.getDate();
+	if(dd<10) dd = '0' + dd;
+	var hh = objD.getHours();
+	if(hh<10) hh = '0' + hh;
+	var mm = objD.getMinutes();
+	if(mm<10) mm = '0' + mm;
+	var ss = objD.getSeconds();
+	if(ss<10) ss = '0' + ss;
+	var ww = objD.getDay();
+	if  ( ww==0 )  colorhead="<font color=\"#FF0000\">";
+	if  ( ww > 0 && ww < 6 )  colorhead="<font color=\"#373737\">";
+	if  ( ww==6 )  colorhead="<font color=\"#008000\">";
+	if  (ww==0)  ww="星期日";
+	if  (ww==1)  ww="星期一";
+	if  (ww==2)  ww="星期二";
+	if  (ww==3)  ww="星期三";
+	if  (ww==4)  ww="星期四";
+	if  (ww==5)  ww="星期五";
+	if  (ww==6)  ww="星期六";
+	colorfoot="</font>"
+	str = colorhead + yy + "-" + MM + "-" + dd + " " + hh + ":" + mm + ":" + ss + "  " + ww + colorfoot;
+	return(str);
+}
+function tick()
+{
+	var today;
+	today = new Date();
+	document.getElementById("localtime").innerHTML = showLocale(today);
+	window.setTimeout("tick()", 1000);
+}
+tick();/*时间戳的运用*/
+</script> 
+       </div>
+       </a> </div>
+     <div class="hang">
+       <div class="con">
+         <div class="nav_u"><a class="pos" href="#dx">我的大学</a></div>
+         <div class="nav_d"><a class="pos" href="#dx">University</a></div>
+       </div>
+       <div class="con">
+         <div class="nav_u"><a class="pos" href="#gz">我的高中</a></div>
+         <div class="nav_d"><a class="pos" href="#gz">Senior high school</a></div>
+       </div>
+       <div class="con">
+         <div class="nav_u"><a class="pos" href="http://www.cqnu.edu.cn/">重庆师范大学</a></div>
+         <div class="nav_d"><a class="pos" href="http://www.cqnu.edu.cn/">cqnu</a></div>
+       </div>
+       <div class="con">
+         <div class="nav_u"><a class="pos" href="http://www.yyfmzx.com/">凤鸣中学</a></div>
+         <div class="nav_d"><a class="pos" href="http://www.yyfmzx.com/">yyfmzx</a></div>
+       </div>
+     </div>
+     <div id="leftcontent">
+       <p class="d"><a name="dx">我的大学</a></p>
+       <a href="http://www.cqnu.edu.cn/" class="e">重庆师范大学：</a><!--官网链接--></br>
+       <img src="img/22.jpg"  class="img1 c"><br>
+       &nbsp;&nbsp;&nbsp;&nbsp;重庆师范大学(英文简写CQNU)创办于1954年。是一所以文理为主，多学科协调发展的多科性高等学府，坐落在历史文化名城重庆，校园面积2804亩，包括大学城校区、沙坪坝校区和北碚校区。</br>
+       &nbsp;&nbsp;&nbsp;&nbsp;学校是重庆市依法治校示范校、重庆市文明单位、重庆市德育工作先进集体、重庆市园林式单位、重庆市十佳市容整洁单位、重庆市森林校园。</br>
+       &nbsp;&nbsp;&nbsp;&nbsp;学校拥有"国务院侨务办公室华文教育基地"、"教育部全国重点建设职教师资培训基地"两个国家级基地，重庆市普通中小学教师市级培训基地、重庆市幼儿教育教师市级研修培训基地、重庆市特殊教育教师市级培训基地、重庆市汉语国际推广培训基地、中德(重庆)职业教育示范基地、重庆市职教师资培训集团、重庆市管乐师资培训基地等<img src="img/23.jpg"  class="img3 b">多个市级基地。</br>
+       &nbsp;&nbsp;&nbsp;&nbsp;截止到2013年，学校图书馆拥有纸质图书总量226万册，全日制本专科生34000余人，在校研究生2000余人。下设有17个学院，1个独立二级学院，47个全日制本科专业，14个硕士学位一级学科授权、86个专业硕士学位授权。</br>
+     </div>
+     <div id="rightcontent">
+       <p class="a"><a name="gz">我的高中</a></p>
+       <a href="http://www.yyfmzx.com/" class="e">凤鸣中学：</a><!--官网链接--></br>
+       <img src="img/20.jpg"  class="img2 b"><br>
+       &nbsp;&nbsp;&nbsp;&nbsp;重庆市云阳县凤鸣中学是一所历史悠久的百年老校。清代嘉庆年间，当地文人士绅发起兴办学校，至道光丁未年建成凤鸣书院，民国三十四年(1945年)改为私立明道中学，1959年成立国办初级中 ，1982年升格为完全中学，1992年学校被原万县地区教委授予为首批"常规管理合格学校"，1997年，凤鸣中学迎接重庆市高完中办学基本条件检查验收一举达标，翻开了学校发展历史上的新的篇章。</br>
+       &nbsp;&nbsp;&nbsp;&nbsp;重庆市云阳凤鸣中学校是云阳江南唯一的一所重点中学，地处凤鸣古镇，距县城十公里。1810年始办义学，1847年为凤鸣<img src="img/21.jpg" class="img1 c">书院，1982年升格为高完中，2009年完成高中扩容工程，2010年以全市第一的评估结果成功晋升重庆市重点中学。学校历经两百年风雨沧桑，形成了"明道求真，勤奋创新"的书院精神和"为每一位学生的成功奠基"的办学理念。</br>
+     </div>
+     <div id="footer"> ——重庆师范大学计算机与信息科学学院2017级计科 谭虹制作&copy;版权所有 —— </div>
+   </div>
+</body>
+</html>

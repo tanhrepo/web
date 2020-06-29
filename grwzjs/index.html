@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="js,JS,个人网站,谭虹,tanhong,网站,设计,主页,重庆师范大学谭虹,沙坪坝,计信,计算机科学与技术,凤鸣中学谭虹,重庆,云阳。" />
+<meta name="author" content="谭虹" />
+<meta name="discription" content="这是我自己制作的第二个个人网站，运用html5开发，使用的是css，js样式。/">
+<title>cover</title>
+<style>
+#container {
+	width: 1200px;     /*整个页面宽为1200px*/
+	margin: 0 auto;			/*整个网页版面居中 */
+}
+body {
+	text-align: center;/*居中*/
+	font-family: 'Roboto Condensed', sans-serif;/*字体*/
+	font-weight: 300;
+	overflow: hidden;/*隐藏溢出*/
+}
+.column, .colon {
+	display: inline-block;/*将对象呈递给内联对象*/
+	vertical-align: top;/*元素垂直排列*/
+	font-size: 86px;/*字体大小*/
+	line-height: 86px;/*行高*/
+}
+.column {
+	-webkit-transition: -webkit-transform 300ms;/*浏览器兼容性*/
+	transition: -webkit-transform 300ms;/*过度时间*/
+	transition: transform 300ms;
+	transition: transform 300ms, -webkit-transform 300ms;
+}
+.colon {
+	-webkit-transition: -webkit-transform 300ms;/*浏览器兼容性*/
+	transition: -webkit-transform 300ms;/*过度时间*/
+	transition: transform 300ms;
+	transition: transform 300ms, -webkit-transform 300ms;
+	-webkit-transform: translateY(calc(50vh - 43px));
+	transform: translateY(calc(50vh - 43px));
+}
+.colon:after {
+	content: ':';
+}
+.num {
+	-webkit-transition: opacity 500ms, text-shadow 100ms;/*阴影效果*/
+	transition: opacity 500ms, text-shadow 100ms;/*阴影效果*/
+	opacity: 0.025;/*不透明度*/
+}
+.num.visible {
+	opacity: 1.0;/*不透明度*/
+	text-shadow: 1px 1px 0px #336699;/*阴影效果*/
+}
+.num.close {
+	opacity: 0.35;
+}
+.num.far {
+	opacity: 0.15;
+}
+.num.distant {
+	opacity: 0.1;
+}
+.time {
+	float: left;/*左浮动*/
+}
+input {
+	background: transparent;/* 输入框背景透明 */
+	border: none;				/* 无边框 */
+	color: #333;/*设置颜色*/
+	font-size: 60px;/*字体大小*/
+	font-weight: bold;/*文字粗体*/
+	font-family: 黑体;/*字体样式*/
+}
+#c {
+	font-size: 60px;         /*文字大小为80px*/
+	position: relative;      /*相对定位*/
+	top: 360px;               /*往上移360px*/
+	left: 0px;
+	font-family: 华文行楷				 /*左右不用移动*/
+}
+a:hover {
+	color: #ffffff;
+	text-shadow: 0 0 10px red;
+}    /*当鼠标移上去的时候,文字变颜色，再加上阴影效果*/
+</style>
+<script>
+var msg="欢迎来到来到谭虹的个人网页";		//跑马灯的文字
+var interval = 400;	//跑动的速度
+var seq=0;
+function LenScroll() {
+	document.nextForm.lenText.value = msg.substring(seq, msg.length) + "   " + msg;
+	seq++;
+	if ( seq > msg.length )
+		seq = 0;
+	window.setTimeout("LenScroll();", interval);
+}
+
+</script>
+</head>
+
+<body onLoad="LenScroll()">
+<div id="container">
+  <div class="time">
+    <div class="column">
+      <div class="num">0</div>
+      <div class="num">1</div>
+      <div class="num">2</div>
+    </div>
+    <div class="column">
+      <div class="num">0</div>
+      <div class="num">1</div>
+      <div class="num">2</div>
+      <div class="num">3</div>
+      <div class="num">4</div>
+      <div class="num">5</div>
+      <div class="num">6</div>
+      <div class="num">7</div>
+      <div class="num">8</div>
+      <div class="num">9</div>
+    </div>
+    <div class="colon"></div>
+    <div class="column">
+      <div class="num">0</div>
+      <div class="num">1</div>
+      <div class="num">2</div>
+      <div class="num">3</div>
+      <div class="num">4</div>
+      <div class="num">5</div>
+    </div>
+    <div class="column">
+      <div class="num">0</div>
+      <div class="num">1</div>
+      <div class="num">2</div>
+      <div class="num">3</div>
+      <div class="num">4</div>
+      <div class="num">5</div>
+      <div class="num">6</div>
+      <div class="num">7</div>
+      <div class="num">8</div>
+      <div class="num">9</div>
+    </div>
+    <div class="colon"></div>
+    <div class="column">
+      <div class="num">0</div>
+      <div class="num">1</div>
+      <div class="num">2</div>
+      <div class="num">3</div>
+      <div class="num">4</div>
+      <div class="num">5</div>
+    </div>
+    <div class="column">
+      <div class="num">0</div>
+      <div class="num">1</div>
+      <div class="num">2</div>
+      <div class="num">3</div>
+      <div class="num">4</div>
+      <div class="num">5</div>
+      <div class="num">6</div>
+      <div class="num">7</div>
+      <div class="num">8</div>
+      <div class="num">9</div>
+    </div>
+    <script>
+    'use strict';
+var size = 86;/*大小*/
+var columns = Array.from(document.getElementsByClassName('column'));
+var d = undefined,
+    c = undefined;
+var classList = ['visible', 'close', 'far', 'far', 'distant', 'distant'];
+var use24HourClock = true;
+
+function padClock(p, n) {
+	return p + ('0' + n).slice(-2);
+}
+
+function getClock() {
+	d = new Date();
+	return [use24HourClock ? d.getHours() : d.getHours() % 12 || 12, d.getMinutes(), d.getSeconds()].reduce(padClock, '');
+}
+
+function getClass(n, i2) {
+	return classList.find(function (class_, classIndex) {
+		return i2 - classIndex === n || i2 + classIndex === n;
+	}) || '';
+}
+
+var loop = setInterval(function () {
+	c = getClock();
+
+	columns.forEach(function (ele, i) {
+		var n = +c[i];
+		var offset = -n * size;
+		ele.style.transform = 'translateY(calc(50vh + ' + offset + 'px - ' + size / 2 + 'px))';
+		Array.from(ele.children).forEach(function (ele2, i2) {
+			ele2.className = 'num ' + getClass(n, i2);
+		});
+	});
+}, 200 + Math.E * 10);/*上面代码实现时间戳的运用*/
+    </script> 
+  </div>
+  <div>
+    <form name="nextForm">
+      <input type="text" name="lenText">
+    </form>
+  </div>
+  <div id="c" ><a href="home.html">Enter</a></div>
+</div>
+</body>
+</html>

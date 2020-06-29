@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>hello!</title>
+		<style>
+			div {
+				border: 2px blue solid;
+				margin: 20px 30px 20px;
+				padding: 15px;
+			}
+			
+			p {
+				padding: 0px;
+				margin: 0px;
+				border: 1px red solid;
+			}
+			 /*red可以换成#f00或者#ff0000*/  
+			/*div{display: inline-block;}*/ 
+			/*p{display: inline;}inline与inline-block效果一样*/
+			/* display属性值inline-block表示按文本方式显示 */
+			
+			.b-red {
+				border-color: red;
+			}
+			
+			.b-green {
+				border-color: green;
+			}
+			
+			.b-yellow {
+				border-color: #ff0;
+			}
+			
+			.b-purple {
+				border-color: #F0F;
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<p>请观察DIV标记的外边距、内边距和p标记中的内容</p>
+		</div>
+		<div style="margin-left:100px;" class="b-green">
+			<p>请观 察DIV标记的外边距、内边距和p标记中的内容</p>
+		</div>
+		<div class=" b-purple">
+			<p>请观察DIV标记的外边距、内边距 和p标记中的内容
+			</p>
+		</div>
+	</body>
+
+</html>

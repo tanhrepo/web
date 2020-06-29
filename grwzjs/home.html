@@ -1,0 +1,798 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="js,JS,个人网站,谭虹,tanhong,网站,设计,主页,重庆师范大学谭虹,沙坪坝,计信,计算机科学与技术,凤鸣中学谭虹,重庆,云阳。" />
+    <meta name="author" content="谭虹" />
+    <meta name="discription" content="这是一个自己制作的个人网站，运用html5开发，使用的是css，js样式。/">
+    <meta http-equiv="refresh" content="600" />
+    <title>首页</title>
+    <Script language="javascript">
+ var months = new Array("一", "二", "三","四", "五", "六", "七", "八", "九","十", "十一", "十二");
+ var daysInMonth = new Array(31, 28, 31, 30, 31, 30, 31, 31,30, 31, 30, 31);
+ var days = new Array("日","一", "二", "三","四", "五", "六");
+ var classTemp;
+ var today=new getToday();
+ var year=today.year;
+ var month=today.month;
+ var newCal; 
+
+ function getDays(month, year) {
+  if (1 == month) return ((0 == year % 4) && (0 != (year % 100))) ||(0 == year % 400) ? 29 : 28;
+  else return daysInMonth[month];
+ }
+
+ function getToday() {
+  this.now = new Date();
+  this.year = this.now.getFullYear();
+  this.month = this.now.getMonth();
+  this.day = this.now.getDate();
+ }
+
+ function Calendar() {
+  newCal = new Date(year,month,1);
+  today = new getToday();   
+  var day = -1;
+  var startDay = newCal.getDay();
+  var endDay=getDays(newCal.getMonth(), newCal.getFullYear());
+  var daily = 0;
+  if ((today.year == newCal.getFullYear()) &&(today.month == newCal.getMonth()))
+  {
+   day = today.day;
+  }
+  var caltable = document.all.caltable.tBodies.calendar;
+  var intDaysInMonth =getDays(newCal.getMonth(), newCal.getFullYear());
+
+  for (var intWeek = 0; intWeek < caltable.rows.length;intWeek++)
+   for (var intDay = 0;intDay < caltable.rows[intWeek].cells.length;intDay++)
+   {
+    var cell = caltable.rows[intWeek].cells[intDay];
+    var montemp=(newCal.getMonth()+1)<10?("0"+(newCal.getMonth()+1)):(newCal.getMonth()+1);         
+    if ((intDay == startDay) && (0 == daily)){ daily = 1;}
+    var daytemp=daily<10?("0"+daily):(daily);
+    var d="<"+newCal.getFullYear()+"-"+montemp+"-"+daytemp+">";
+    if(day==daily) cell.className="DayNow";
+    else if(intDay==6) cell.className = "DaySat";
+    else if (intDay==0) cell.className ="DaySun";
+    else cell.className="Day";
+    if ((daily > 0) && (daily <= intDaysInMonth))
+    {
+     cell.innerText = daily;
+     daily++;
+    } else
+    {
+     cell.className="CalendarTD";
+     cell.innerText = "";
+    }
+  }
+  document.all.year.value=year;
+  document.all.month.value=month+1;
+ }
+
+ function subMonth()
+ {
+  if ((month-1)<0)
+  {
+   month=11;
+   year=year-1;
+  } else
+  {
+   month=month-1;
+  }
+  Calendar();
+ }
+
+ function addMonth()
+ {
+  if((month+1)>11)
+  {
+   month=0;
+   year=year+1;
+  } else
+  {
+   month=month+1;
+  }
+  Calendar();
+ }
+
+ function setDate() 
+ {
+  if (document.all.month.value<1||document.all.month.value>12)
+  {
+   alert("月的有效范围在1-12之间!");
+   return;
+  }
+  year=Math.ceil(document.all.year.value);
+  month=Math.ceil(document.all.month.value-1);
+  Calendar();
+ }
+</Script>
+    <Script>
+function buttonOver()
+{
+ var obj = window.event.srcElement;
+ obj.runtimeStyle.cssText = "background-color:#FFFFFF";
+// obj.className="Hover";
+}
+
+function buttonOut()
+{
+ var obj = window.event.srcElement;
+ window.setTimeout(function(){obj.runtimeStyle.cssText = "";},300);
+}
+</Script>
+    <style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#container1 {
+	width: 100%;/*宽度占比*/
+	margin-right: 10px;/*外部右边距*/
+}
+#pictures {
+	width: 100%;/*宽度占比*/
+	height: 280px;/*高度*/
+	overflow: hidden;/*隐藏溢出*/
+	position: relative;/*相对位置*/
+}
+#ul1 {
+	position: absolute;
+绝对位置 left: 0;
+	top: 0;
+	overflow: hidden;/*隐藏溢出*/
+}
+#ul1 li {
+	float: left;/*左浮动*/
+	width: 300px;/*宽度*/
+	height: auto;/*高度跟随内容*/
+}
+#ul1 li img {
+	width: 300px;/*宽度*/
+	height: auto;/*高度跟随内容*/
+}
+Input {
+	font-family: verdana;/*字体样式*/
+	font-size: 9pt;/*字体大小*/
+	text-decoration: none;/*无装饰*/
+	background-color: #FFFFFF;/*背景颜色*/
+	height: 20px;/*高度*/
+	border: 1px solid #666666;
+	color: #000000;/*颜色*/
+}
+.Calendar {
+	font-family: verdana;/*字体样式*/
+	text-decoration: none;/*无宽度*/
+	width: 170;/*宽度*/
+	background-color: #C0D0E8;/*背景颜色*/
+	font-size: 9pt;/*字体大小*/
+	border: 0px dotted #1C6FA5;/*边线 虚线*/
+}
+.CalendarTD {
+	font-family: verdana;/*字体样式*/
+	font-size: 7pt;/*字体大小*/
+	color: #000000;/*颜色*/
+	background-color: #f6f6f6;/*背景颜色*/
+	height: 20px;/*高度*/
+	width: 11%;/*宽度*/
+	text-align: center;/*内容居中*/
+}
+.Title {
+	font-family: verdana;/*字体样式*/
+	font-size: 11pt;/*字体大小*/
+	font-weight: normal;/*文本粗细*/
+	height: 24px;/*高度*/
+	text-align: center;/*居中*/
+	color: #333333;/*颜色*/
+	text-decoration: none;/*文本效果无*/
+	background-color: #A4B9D7;/*背景颜色*/
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;/*上下左右边线宽度*/
+	border-bottom-style: 1px;/*边线样式*/
+	border-top-color: #999999;
+	border-right-color: #999999;
+	border-bottom-color: #999999;
+	border-left-color: #999999;/*边线颜色*/
+}
+.Day {
+	font-family: verdana;/*T字体样式*/
+	font-size: 7pt;/*字体大小*/
+	color: #243F65;/*颜色*/
+	background-color: #E5E9F2;/*背景颜色*/
+	height: 20px;/*高度*/
+	width: 11%;/*宽度*/
+	text-align: center;/*居中*/
+}
+.DaySat {
+	font-family: verdana;/*字体样式*/
+	font-size: 7pt;/*字体大小*/
+	color: #FF0000;/*颜色*/
+	text-decoration: none;/*文本装饰无*/
+	background-color: #E5E9F2;/*背景颜色*/
+	text-align: center;/*居中*/
+	height: 18px;/*高度*/
+	width: 12%;/*宽度*/
+}
+.DaySun {
+	font-family: verdana;/*字体样式*/
+	font-size: 7pt;/*字体大小*/
+	color: #FF0000;/*颜色*/
+	text-decoration: none;/*文本装饰*/
+	background-color: #E5E9F2;/*背景颜色*/
+	text-align: center;/*居中*/
+	height: 18px;/*高度*/
+	width: 12%;/*宽度*/
+}
+.DayNow {
+	font-family: verdana;/*字体样式*/
+	font-size: 7pt;/*字体大小*/
+	font-weight: bold;/*边线粗细*/
+	color: #000000;/*颜色*/
+	background-color: #FFFFF;/*背景颜色*/
+	height: 20px;/*高度*/
+	text-align: center;/*居中*/
+}
+.DayTitle {
+	font-family: verdana;/*字体样式*/
+	font-size: 9pt;/*字体大小*/
+	color: #000000;/*颜色*/
+	background-color: #C0D0E8;/*背景颜色*/
+	height: 20px;/*高度*/
+	width: 11%;/*宽度*/
+	text-align: center;/*居中*/
+}
+.DaySatTitle {
+	font-family: verdana;/*字体样式*/
+	font-size: 9pt;/*字体大小*/
+	color: #FF0000;/*颜色*/
+	text-decoration: none;/*文本装饰*/
+	background-color: #C0D0E8;/*背景颜色*/
+	text-align: center;/*居中*/
+	height: 20px;/*高度*/
+	width: 12%;/*宽度*/
+}
+.DaySunTitle {
+	font-family: verdana;/*字体样式*/
+	font-size: 9pt;/*字体大小*/
+	color: #FF0000;/*颜色*/
+	text-decoration: none;/*文本装饰*/
+	background-color: #C0D0E8;/*背景颜色*/
+	text-align: center;
+	height: 20px;
+	width: 12%;
+}
+.DayButton {
+	font-family: Webdings;/*字体样式*/
+	font-size: 9pt;/*字体大小*/
+	font-weight: bold;/*边线粗细*/
+	color: #243F65;/*颜色*/
+	cursor: hand;
+	text-decoration: none;/*文本装饰*/
+}
+#container {
+	width: 1200px;     /*整个页面宽为1200px*/
+	margin: 0 auto;			/*整个网页版面居中 */
+}
+.img {/*对选项菜单里面的图片进行设置*/
+	width: 40px;/*图片宽40px*/
+	height: 45px;/*图片高度为45px*/
+	margin-top: 15px;/*图片外边距，px距离上方15px*/
+	margin-left: 8px;/*图片距离左边8px*/
+}
+.div3, .div4, .div5, .div6, .div7 {/*对菜单选项进行设置*/
+	width: 70px;/*宽70px*/
+	height: 70px;/*高70px*/
+	-webkit-border-radius: 45px;
+	-o-border-radius: 45px;
+	-moz-border-radius: 45px;
+	border-radius: 45px;/*圆角显示，这样设置之后就可以达到圆的效果*/
+	text-align: center;/*里面的内容居中显示*/
+	float: left;/*左浮动，让div横排显示*/
+	margin-left: 25px;/*左边外边距25px，各元素之间产生距离*/
+	opacity: 0.7;/*透明度为0.7*/
+}
+.div3:hover, .div4:hover, .div5:hover, .div6:hover, .div7:hover {/*当鼠标移到元素上方产生的效果*/
+	transform: rotate(-10deg);/*倾斜逆时针10度*/
+	opacity: 1;/*透明度为不透明*/
+}
+#topcontent {
+	width: 1200px;/**宽度**/
+	height: 150px/**高度**/
+}
+#leftcontent {
+	float: left;/**左浮动**/
+	width: 250px;/*设置总宽度为850px;*/
+	height: 1200px;/*设置总宽度为1300px*/
+	border: 7px dashed #CCCCCC;/*为元素加上边框*/
+	-webkit-border-radius: 50px 0px 50px 50px;
+	-o-border-radius: 50px 0px 50px 50px;
+	-moz-border-radius: 50px 0px 50px 50px;/*浏览器的兼容性*/
+	border-radius: 50px 0px 50px 50px;/*圆角显示，这样设置之后就可以达到圆的效果*/
+	padding: 15px;/*上下左右的内边距均为15px*/
+}
+#rightcontent1 {
+	float: right;/**右浮动**/
+	width: 800px;/*设置总宽度为850px;*/
+	height: 300px;/*设置总宽度为1300px*/
+	padding: 15px;/*上下左右的内边距均为15px*/
+	font-family: 楷体;/**字体样式**/
+	font-size: 20px;/**字体大小**/
+	background-color: #ccc;
+}
+#rightcontent2 {
+	float: right;/**右浮动**/
+	width: 800px;/*设置总宽度为850px;*/
+	height: 300px;/*设置总宽度为1300px*/
+	-webkit-border-radius: 50px 0px 50px 0px;
+	-o-border-radius: 50px 0px 50px 0px;
+	-moz-border-radius: 50px 0px 50px 0px;/*浏览器的兼容性*/
+	border-radius: 50px 0px 50px 0px;/*圆角显示，这样设置之后就可以达到圆的效果*/
+	padding: 15px;/*上下左右的内边距均为15px*/
+	font-family: 楷体;/**字体样式**/
+	font-size: 20px;/**字体大小**/
+	margin-top: 10px;/**外部顶边距**/
+	-moz-box-shadow: 5px 5px 5px #999 inset;
+	-webkit-box-shadow: 5px 5px 5px #999 inset;
+	-o-box-shadow: 5px 5px 5px #999 inset;/**浏览器兼容性**/
+	box-shadow: 5px 5px 5px #999 inset;/**边框阴影**/
+}
+#rightcontent4 {
+	float: right;/**右浮动**/
+	width: 830px;/*设置总宽度为850px;*/
+	height: 300px;/*设置总宽度为1300px*/
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-top: 10px;/**外部顶边距**/
+}
+#rightcontent3 {
+	float: right;/**右浮动**/
+	width: 800px;/**宽度**/
+	height: 300px;/**高度**/
+	font-family: 楷体;/**字体样式**/
+	font-size: 20px;/**字体大小**/
+	-webkit-border-radius: 50px 0px 50px 0px;
+	-moz-border-radius: 50px 0px 50px 0px;
+	-o-border-radius: 50px 0px 50px 0px;
+	border-radius: 50px 0px 50px 0px;
+	/*圆角显示，这样设置之后就可以达到圆的效果*/
+	padding: 15px;/*上下左右的内边距均为15px*/
+	margin-top: 10px;/**外部顶边距**/
+	-moz-box-shadow: -5px -5px 5px #999 inset;
+	-webkit-box-shadow: -5px -5px 5px #999 inset;
+	-o-box-shadow: -5px -5px 5px #999 inset;/**浏览器兼容性**/
+	box-shadow: -5px -5px 5px #999 inset;/**边框阴影**/
+}
+.a {
+	width: 0, auto;
+	height: 30px;/**高度**/
+	font-size: 44px;/**字体大小**/
+	font-family: 华文行楷;/**字体样式**/
+	color: #0C3;/**颜色**/
+	text-shadow: 1px 1px rgba(0,102,102,1), 2px 2px rgba(0,102,102,1), 3px 3px rgba(0,102,102,1);/**文字浮雕效果**/
+}
+.b {
+	font-size: 24px;/**字体大小**/
+	font-family: 楷体;/**字体样式**/
+}
+.c {
+	float: right/**左浮动**/
+}
+.d {
+	font-family: 方正舒体;/**字体样式**/
+	font-size: 30px;/**字体大小**/
+	color: #F30;/**字体颜色**/
+}
+.e {
+	font-family: 方正舒体;/**字体样式**/
+	font-size: 30px;/**字体大小**/
+	color: #F30;/**字体颜色**/
+	float: left;/**左浮动**/
+}
+.f {
+	float: left;/**左浮动**/
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);
+	-moz-box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);/**浏览器兼容性**/
+	box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);/**阴影效果**/
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;/**圆角**/
+}
+.soft-embossed {
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);
+	-moz-box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);
+	box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);/**阴影效果**/
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;/**浏览器兼容性**/
+	border-radius: 20px;/**圆角**/
+}
+.video {
+	position: relative;/*相对位置的设置*/
+	left: 25px;/*相对于原来的位置，距离左边25px*/
+}
+/*脚注*/
+#footer {
+	float: left;/**左浮动**/
+	width: 800px;/**宽度**/
+	height: 30px;/**高度**/
+	margin-left: 200px;/**外部左边距**/
+	margin-right: 200px;/**外部右边距**/
+	margin-top: 30px;/**外部顶边距**/
+	border: solid #000000 1px;/**边线样式，颜色，宽度**/
+	font-size: 20px;/**字体大小**/
+	background-color: #CCC;/**背景颜色**/
+	text-align: center;/**内容居中**/
+	border-radius: 25px 25px 0px 0px;/*圆角*/
+	font-family: 华文行楷;/**字体样式**/
+	padding-top: 10px;/**内部顶边距**/
+}
+.demo {
+	-webkit-box-shadow: 3px 3px 3px;
+	-moz-box-shadow: 3px 3px 3px;
+	-ms-box-shadow: 3px 3px 3px;
+	-o-box-shadow: 3px 3px 3px;/**浏览器兼容性**/
+	box-shadow: 3px 3px 3px;/**阴影效果**/
+}
+.time {
+	width: 700;/*宽度*/
+	height: 30px;/*高度*/
+	font-size: 24px;/*字体大小*/
+	float: right;/*右浮动*/
+}
+#navigation {
+	/*整个菜单是个div方块，此id号用来定义此菜单div的*/
+	width: 210px;/*宽度*/
+	font-family: Arial;/*字体样式*/
+	text-align: center;/*居中*/
+}
+#navigation > ul {
+	list-style-type: none;/*不显示项目符号*/
+	margin: 0px;
+	padding: 0px;
+}
+#navigation > ul > li {
+	border-bottom: 1px solid #000;/*添加下划线*//*项目边框底线用来显示菜单项的下划线效果，如果把浏览器背景设计成黑色，则菜单项下划线效果就出来了*/
+}
+/*菜单列表项里都有<a>链接标签，用于打开其他链接对象用*/
+#navigation > ul > li > a {
+	display: block;/*区块显示*/
+	padding: 5px 5px 5px 0.5em;
+	text-decoration: none;
+	border-left: 12px solid #333;
+	/*左边的粗红边*/
+	border-right: 1px solid #333;/*右侧阴影*/
+}
+#navigation > ul > li > a:link, #navigation > ul > li > a:visited {
+	background-color: #999;
+	color: #ffffff;/*平时菜单显示文字为白色*/
+}
+/*当鼠标移动菜单上时菜单字符讲变成黄色*/
+#navigation > ul > li > a:hover {
+	/*鼠标经过时*/
+	background-color: #111;/*改变背景颜色*/
+	color: #ffff00;/*改变文字颜色*/
+}
+/*子菜单的CSS样式*/
+#navigation ul li ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+#navigation ul li ul li {
+	border-top: 1px solid #999;/*边线样式*/
+}
+#navigation ul li ul li a {
+	display: block;
+	padding: 3px 3px 3px 0.5em;/*内部间距*/
+	text-decoration: none;/*无文字特效*/
+	border-left: 28px solid #444;/*左边线*/
+	border-right: 1ps solid #222;/*右边线*/
+}
+#navigation ul li ul li a:link, #navigation ul li ul li a:visited {
+	background-color: #666;
+	color: #ffffff;/*子菜单平时和访问后显示文字为白色*/
+}
+/*当鼠标移动菜单上时菜单字符讲变成黄色*/
+#navigation ul li ul li a:hover {
+	/*鼠标经过时*/
+	background-color: #111;
+	color: #ffff00;/*子菜单文字颜色*/
+}
+#navigation ul li ul.myHide {
+	/*隐藏子菜单*/
+	display: none;
+}
+#navigation ul li ul.myShow {
+	/*显示子菜单*/
+	display: block;
+}
+</style>
+    <script language="javascript">
+	function change(){
+		//这里的this就是子菜单ul，this.parentNode表示有子菜单那项的主菜单的LI
+		var oSecondDiv = this.parentNode.getElementsByTagName("ul")[0];
+		if(oSecondDiv.className == "myHide")
+			oSecondDiv.className = "myShow";
+		else
+			oSecondDiv.className = "myHide"; 
+	}
+	window.onload = function(){
+		var oUl = document.getElementById("listUL");
+		var aLi = oUl.childNodes;
+		var oA;
+		for(var i=0;i<aLi.length;i++){
+			if(aLi[i].tagName == "LI" && aLi[i].getElementsByTagName("ul").length){
+				oA = aLi[i].firstChild;
+				oA.onclick = change;
+			}
+		}
+		  var oDiv = document.getElementById("pictures");
+            var oUl = document.getElementById("ul1");
+            var speed = -3;
+            var oLi = document.getElementsByTagName("li");
+
+            oUl.innerHTML += oUl.innerHTML;//先把图片增加一组
+            oUl.style.width = oLi.length * oLi[0].offsetWidth + "px";
+
+            function move() {
+                if (oUl.offsetLeft < -oUl.offsetWidth / 2) {
+                    oUl.style.left = "0";
+                }
+                oUl.style.left = oUl.offsetLeft + speed + "px";
+            }
+            var timer = setInterval(move, 30);
+            oDiv.onmouseover = function() {
+                clearInterval(timer);
+            };
+            oDiv.onmouseout = function() {
+                timer = setInterval(move, 30);
+            };
+	}
+
+    </script>
+    </head>
+
+    <body>
+    <div id="container"> <img class="soft-embossed" src="img/15.jpg"><!--顶部图片-->
+      <div id="topcontent"> <a href="home.html" style="color: #F00"><!--第一个按钮设置-->
+        <div class="div3" style="background-color: #999"><!--运用类选择器第div3,同时用行内样式设置背景颜色--> 
+        <img src="img/7.png" class="img" width,200px> <br>
+        <br>
+        首页 </div>
+        </a> <a href="school.html" style="color:#936"><!--第二个按钮设置-->
+        <div class="div5" style="background-color: #999"><!--运用类选择器第div5,同时用行内样式设置背景颜色--> 
+          <img src="img/8.png" class="img"> <br>
+          <br>
+          我的学校 </div>
+        </a> <a href="hometown.html" style="color:#606 "><!--第三个按钮设置-->
+        <div class="div6" style="background-color: #999"><!--运用类选择器第div6,同时用行内样式设置背景颜色--> 
+          <img src="img/10.png" class="img"> <br>
+          <br>
+          我的家乡 </div>
+        </a> <a href="index.html" style="color: #000 "><!--第四个按钮设置-->
+        <div class="div7" style="background-color: #999 "><!--运用类选择器第div7,同时用行内样式设置背景颜色--> 
+          <img src="img/12.png" class="img"> <br>
+          <br>
+          返回封面 </div>
+        </a>
+        <div class="time"> <span id=localtime></span> 
+          <script type="text/javascript">
+function showLocale(objD)
+{
+	var str,colorhead,colorfoot;
+	var yy = objD.getYear();
+	if(yy<1900) yy = yy+1900;
+	var MM = objD.getMonth()+1;
+	if(MM<10) MM = '0' + MM;
+	var dd = objD.getDate();
+	if(dd<10) dd = '0' + dd;
+	var hh = objD.getHours();
+	if(hh<10) hh = '0' + hh;
+	var mm = objD.getMinutes();
+	if(mm<10) mm = '0' + mm;
+	var ss = objD.getSeconds();
+	if(ss<10) ss = '0' + ss;
+	var ww = objD.getDay();
+	if  ( ww==0 )  colorhead="<font color=\"#FF0000\">";
+	if  ( ww > 0 && ww < 6 )  colorhead="<font color=\"#373737\">";
+	if  ( ww==6 )  colorhead="<font color=\"#008000\">";
+	if  (ww==0)  ww="星期日";
+	if  (ww==1)  ww="星期一";
+	if  (ww==2)  ww="星期二";
+	if  (ww==3)  ww="星期三";
+	if  (ww==4)  ww="星期四";
+	if  (ww==5)  ww="星期五";
+	if  (ww==6)  ww="星期六";
+	colorfoot="</font>"
+	str = colorhead + yy + "-" + MM + "-" + dd + " " + hh + ":" + mm + ":" + ss + "  " + ww + colorfoot;
+	return(str);
+}
+function tick()
+{
+	var today;
+	today = new Date();
+	document.getElementById("localtime").innerHTML = showLocale(today);
+	window.setTimeout("tick()", 1000);
+}
+tick();
+</script> 
+        </div>
+      </div>
+      <div id="leftcontent">
+        <div id="navigation">
+          <ul id="listUL">
+            <!--主菜单无序列表-->
+            <li><a href="#wo">我的资料</a></li>
+            <li><a href="#"> 思想</a> 
+              <!--子菜单无序列表-->
+              <ul class="myHide">
+                <li><a href="#ln">我的理念</a></li>
+                <li><a href="#love">我的爱好</a></li>
+              </ul>
+            </li>
+            <li><a href="#">运动</a> 
+              <!--子菜单无序列表-->
+              <ul class="myHide">
+                <li><a href="#play">Basketball</a></li>
+                <li><a href="#play">Football</a></li>
+                <li><a href="#play">swimming</a></li>
+              </ul>
+            </li>
+            <li><a href="#zy">专业</a> 
+              <!--子菜单无序列表--> 
+            </li>
+            <li><a href="#sp">视频</a></li>
+          </ul>
+          <!--主菜单无序列表结束--> 
+        </div>
+        <div style="margin-top:10px;">
+          <table border="0" cellpadding="0" cellspacing="1" class="Calendar" id="caltable">
+            <thead>
+              <tr align="center" valign="middle">
+                <td colspan="7" class="Title"><a href="javaScript:subMonth();" title="上一月" Class="DayButton">3</a>
+                  <input name="year" type="text" size="4" maxlength="4" onKeyDown="if (event.keyCode==13)" onKeyUp="this.value=this.value.replace(/[^0-9]/g,'')"  onpaste="this.value=this.value.replace(/[^0-9]/g,'')">
+                  年
+                  <input name="month" type="text" size="1" maxlength="2" onKeyDown="if (event.keyCode==13)" onKeyUp="this.value=this.value.replace(/[^0-9]/g,'')"  onpaste="this.value=this.value.replace(/[^0-9]/g,'')">
+                  月<a href="JavaScript:addMonth();" title="下一月" Class="DayButton">4</a></td>
+              </tr>
+              <tr align="center" valign="middle"> 
+                <Script LANGUAGE="JavaScript">  
+   document.write("<TD class=DaySunTitle id=diary >" + days[0] + "</TD>"); 
+   for (var intLoop = 1; intLoop < days.length-1;intLoop++) 
+    document.write("<TD class=DayTitle id=diary>" + days[intLoop] + "</TD>"); 
+    document.write("<TD class=DaySatTitle id=diary>" + days[intLoop] + "</TD>"); 
+  </Script> 
+              </TR>
+            </thead>
+            <TBODY border=1 cellspacing="0" cellpadding="0" ID="calendar" ALIGN=CENTER ONCLICK="getDiary()">
+              <Script LANGUAGE="JavaScript">
+  for (var intWeeks = 0; intWeeks < 6; intWeeks++)
+  {
+   document.write("<TR style='cursor:hand'>");
+   for (var intDays = 0; intDays < days.length;intDays++) document.write("<TD class=CalendarTD onMouseover='buttonOver();' onMouseOut='buttonOut();'></TD>");
+   document.write("</TR>");
+  } /*日历的js代码*/
+ </Script>
+            </TBODY>
+          </TABLE>
+          <Script  LANGUAGE="JavaScript">
+ Calendar();
+</Script> 
+        </div>
+        <div style="margin-top:20px ">
+          <p class="a"><a name="wo">我的资料:</a></p>
+          <br/>
+          <br/>
+          
+          <br/>
+          <p class="b">姓名：谭虹</p>
+          <p class="b">出生年月：1998年11月</p>
+          <p class="b">星座：摩羯座</p>
+          <p class="b">电话：15736459446</p>
+          <p class="b">QQ:884909123</p>
+          <p class="b">邮箱：884909123@qq.com</p>
+          <p class="b">学校：重庆师范大学</p>
+          <p class="b">专业：计算机科学与技术</p>
+        </div>
+      </div>
+      <div id="rightcontent1">
+        <p class="d">　<a name="ln">我的理念：</a></p>
+        <img src="img/13.jpg" width="301" height="184" class="c"><br>
+        &nbsp;&nbsp; 
+        <script language="javascript">
+function Delta(sHex1,sHex2,iNum){
+	//计算每个字的变化量
+	var iHex1 = parseInt("0x"+sHex1);
+	var iHex2 = parseInt("0x"+sHex2);
+	return (iHex2 - iHex1)/(iNum-1);
+}
+function Colorful(sText,sColor1,sColor2){
+	if(sText.length<=1){
+//如果只有一个字符，渐变无从谈起，直接输出并返回
+	document.write("<font style= 'color:#"+sColor1+";'>"+sText+"</font>");
+		return;
+	}
+//RGB三色分离，分别获取变化的小量delta
+var fDeltaR = Delta(sColor1.substring(0,2), sColor2.substring(0,2),sText.length);
+var fDeltaG = Delta(sColor1.substring(2,4), sColor2.substring(2,4),sText.length);
+var fDeltaB = Delta(sColor1.substring(4,6), sColor2.substring(4,6),sText.length);
+var sColorR = parseInt("0x"+sColor1.substring(0,2));	
+var sColorG = parseInt("0x"+sColor1.substring(2,4));
+var sColorB = parseInt("0x"+sColor1.substring(4,6));
+for(var i=0;i<sText.length;i++){
+	document.write("<font style= 'color:rgb("+Math.round(sColorR)+","+Math.round(sColorG)+","+Math.round(sColorB)+");'>"+sText.substring(i,i+1)+"</font>");
+/*每输出一个字符，颜色的三个分量都相应的变化
+当字符输出完成时，正好由sColor1变成sColor2*/
+		sColorR += fDeltaR;
+		sColorG += fDeltaG;
+		sColorB += fDeltaB;
+		}
+}
+Colorful("在年轻的季节我甘愿吃苦受累，只愿通过自己富有激情、积极主动的努力实现自身价值并在工作中做出最大的贡献： 作为初学者，我们都有学习能力并且乐于学习、敢于创新，不断追求卓越; 作为参与者，我们都应该具备诚实可信的品格、富有团队合作精神。我希望在大学四年里能够学到更多的知识；多接触一些人，多接触一些事，让自己真正的成长起来。我希望在大学四年里能够学到更多的知识；多接触一些人，多接触一些事，让自己真正的成长起来。","FF3300","3366FF");
+</script> 
+      </div>
+      <div id="rightcontent2"> <img src="img/3.jpg" height="191" class="f">
+        <p class="e"><a name="love">我的爱好：</a></p>
+        <br>
+        &nbsp;&nbsp;我喜欢音乐，喜欢动漫。每天总会花时间在网易云上面听歌，但是我遇到喜欢的音乐并不会一直循环，因为那样的话很快就会产生疲劳，感到厌倦。</br>
+        &nbsp;&nbsp;有一部非常喜欢的动漫叫做《火影忍者》，第一次看的时候还是小学一年级，那时候的点播频道差不多每天都会播放一两集，但是第一次被剧情吸引则是在高中了。这是一部非常优秀的动漫，虽然中间有许多漏洞，但是不可否认它的经典。在这里强烈推荐。 </div>
+      <div id="rightcontent4">
+        <div id="container1"> <a name="play"></a>
+          <div id="pictures">
+            <ul id="ul1">
+              <li><img src="img/ye.jpg" alt=""></li>
+              <li><img src="img/swim.jpg" alt=""></li>
+              <li><img src="img/ke.jpeg" alt=""></li>
+              <li><img src="img/foot.jpg" alt=""></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="rightcontent1">
+        <p class="d">　<a name="zy">我的专业：</a></p>
+        <span class="d"><img src="img/4.jpg" height="191" class="c"></span><br>
+        <script language="javascript">
+function Delta(sHex1,sHex2,iNum){
+	//计算每个字的变化量
+	var iHex1 = parseInt("0x"+sHex1);
+	var iHex2 = parseInt("0x"+sHex2);
+	return (iHex2 - iHex1)/(iNum-1);
+}
+function Colorful(sText,sColor1,sColor2){
+	if(sText.length<=1){
+//如果只有一个字符，渐变无从谈起，直接输出并返回
+	document.write("<font style= 'color:#"+sColor1+";'>"+sText+"</font>");
+		return;
+	}
+//RGB三色分离，分别获取变化的小量delta
+var fDeltaR = Delta(sColor1.substring(0,2), sColor2.substring(0,2),sText.length);
+var fDeltaG = Delta(sColor1.substring(2,4), sColor2.substring(2,4),sText.length);
+var fDeltaB = Delta(sColor1.substring(4,6), sColor2.substring(4,6),sText.length);
+var sColorR = parseInt("0x"+sColor1.substring(0,2));	
+var sColorG = parseInt("0x"+sColor1.substring(2,4));
+var sColorB = parseInt("0x"+sColor1.substring(4,6));
+for(var i=0;i<sText.length;i++){
+	document.write("<font style= 'color:rgb("+Math.round(sColorR)+","+Math.round(sColorG)+","+Math.round(sColorB)+");'>"+sText.substring(i,i+1)+"</font>");
+/*每输出一个字符，颜色的三个分量都相应的变化
+当字符输出完成时，正好由sColor1变成sColor2*/
+		sColorR += fDeltaR;
+		sColorG += fDeltaG;
+		sColorB += fDeltaB;
+		}
+}
+Colorful("我们这个专业的全名叫“计算机科学与技术”。在这个科技高速发展的时代，我们能够成为计算机专业的一份子，应该更加的努力。全球网络化是不可抵挡的潮流，计算机契合了这个时代潮流。计算机方向对我的发展更有利。浅尝web的我，既体会到了web的魅力，也让我感觉到了前路的艰巨。web的不断更新也让我们体会到学海无涯，同学们都应该更加努力啊。","FF3300","3366FF");
+</script> 
+      </div>
+      <div id="rightcontent3">
+        <p class="d">　我的视频：</p>
+        <div class="video"><a name="sp"></a>
+          <iframe height=498 width=510 src='' frameborder=0 'allowfullscreen'></iframe>
+        </div>
+        <!--视频优酷连接--> 
+      </div>
+      <div id="footer"> ——重庆师范大学计算机与信息科学学院2017级计科 谭虹制作&copy;版权所有 —— </div>
+    </div>
+</body>
+</html>

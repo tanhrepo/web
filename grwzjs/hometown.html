@@ -1,0 +1,848 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="js,JS,个人网站,谭虹,tanhong,网站,设计,主页,重庆师范大学谭虹,沙坪坝,计信,计算机科学与技术,凤鸣中学谭虹,重庆,云阳。" />
+    <meta name="author" content="谭虹" />
+    <meta name="discription" content="这是一个自己制作的第二个个人网站，运用html5开发，使用的是css，js样式。/">
+    <meta http-equiv="refresh" content="600" />
+    <title>家乡</title>
+    <style type="text/css">
+#container {
+	width: 1200px;     /*整个页面宽为1200px*/
+	margin: 0 auto;			/*整个网页版面居中 */
+}
+.img {/*对选项菜单里面的图片进行设置*/
+	width: 40px;/*图片宽40px*/
+	height: 45px;/*图片高度为45px*/
+	margin-top: 15px;/*图片外边距，px距离上方15px*/
+	margin-left: 8px;/*图片距离左边8px*/
+}
+.div3, .div4, .div5, .div6, .div7 {/*对菜单选项进行设置*/
+	width: 70px;/*宽70px*/
+	height: 70px;/*高70px*/
+	-webkit-border-radius: 45px;
+	-o-border-radius: 45px;
+	-moz-border-radius: 45px;
+	border-radius: 45px;/*圆角显示，这样设置之后就可以达到圆的效果*/
+	text-align: center;/*里面的内容居中显示*/
+	float: left;/*左浮动，让div横排显示*/
+	margin-left: 25px;/*左边外边距25px，各元素之间产生距离*/
+	opacity: 0.7;/*透明度为0.7*/
+}
+.div3:hover, .div4:hover, .div5:hover, .div6:hover, .div7:hover {/*当鼠标移到元素上方产生的效果*/
+	transform: rotate(-10deg);/*倾斜逆时针10度*/
+	opacity: 1;/*透明度为不透明*/
+}
+#topcontent {
+	width: 1200px;/*宽度*/
+	height: 100px;/*高度*/
+}
+.soft-embossed {
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);
+	-moz-box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);
+	box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);/**阴影效果**/
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;/**边框圆角**/
+}
+.a {
+	font-family: 华文行楷;/**字体样式**/
+	font-size: 50px;/**字体大小**/
+	text-align: center;/**居中**/
+	width: 0, auto;
+	height: 30px;/**高度**/
+	color: #0C3;/**颜色**/
+	text-shadow: 1px 1px rgba(0,102,102,1), 2px 2px rgba(0,102,102,1), 3px 3px rgba(0,102,102,1);/**浮雕效果**/
+}
+.b {
+	width: 1200px;/**宽度**/
+	height: 50px;/**高度**/
+}
+.d {
+	font-family: 华文行楷;/**字体样式**/
+	font-size: 36px;/**字体大小**/
+	text-align: center;/**居中**/
+	color: #F6F;/**颜色**/
+}
+.leftcontant2 {
+	width: 395px;/*宽度*/
+	height: 360px;/*高度*/
+	float: left;/*左浮动*/
+	border-top: 5px #09F dashed;/**边线**/
+	border-bottom: 5px #09F dashed;/**边线**/
+}
+.rightcontant1 {
+	width: 770px;/*宽度*/
+	height: 800px;/*高度*/
+	float: right;/*右浮动*/
+	padding: 15px;/*上下左右的内边距均为15px*/
+	font-family: 楷体;/**字体样式**/
+	font-size: 24px;/**字体大小**/
+	-moz-box-shadow: -5px 5px 5px #999 inset;
+	-webkit-box-shadow: -5px 5px 5px #999 inset;
+	-o-box-shadow: -5px 5px 5px #999 inset;/**浏览器兼容性**/
+	box-shadow: -5px 5px 5px #999 inset;/**边框阴影**/
+	-webkit-border-radius: 0px 50px 0px 0px;
+	-o-border-radius: 0px 50px 0px 0px;
+	-moz-border-radius: 0px 50px 0px 0px;/*浏览器的兼容性*/
+	border-radius: 0px 50px 0px 0px;/*圆角显示，这样设置之后就可以达到圆的效果*/
+	border-right: 5px #09F dashed;/**边线**/
+	border-top: 5px #09F dashed;/**边线**/
+}
+.rightcontant2 {
+	width: 770px;/*宽度*/
+	height: 800px;/*高度*/
+	float: right;/*右浮动*/
+	padding: 15px;/*上下左右的内边距均为15px*/
+	font-family: 楷体;/**字体样式**/
+	font-size: 24px;/**字体大小**/
+	-moz-box-shadow: 5px -5px 5px #999 inset;
+	-webkit-box-shadow: 5px -5px 5px #999 inset;
+	-o-box-shadow: 5px -5px 5px #999 inset;/**浏览器兼容性**/
+	box-shadow: 5px -5px 5px #999 inset;/**边框阴影**/
+	-webkit-border-radius: 0px 0px 0px 50px;
+	-o-border-radius: 0px 0px 0px 50px;
+	-moz-border-radius: 0px 0px 0px 50px;/*浏览器的兼容性*/
+	border-radius: 0px 0px 0px 50px;/*圆角显示，这样设置之后就可以达到圆的效果*/
+	border-left: 5px #09F dashed;/**边线**/
+	border-bottom: 5px #09F dashed;/**边线**/
+}
+.rightcontant3 {
+	width: 900px;/*宽度*/
+	height: 530px;/*高度*/
+	float: left;/*左浮动*/
+	padding: 15px;/*上下左右的内边距均为15px*/
+	font-family: 楷体;/**字体样式**/
+	font-size: 24px;/**字体大小**/
+	-webkit-border-radius: 50px 0px 50px 0px;
+	-moz-border-radius: 50px 0px 50px 0px;
+	-o-border-radius: 50px 0px 50px 0px;
+	border-radius: 50px 0px 50px 0px;
+	/*圆角显示，这样设置之后就可以达到圆的效果*/
+	-moz-box-shadow: -5px -5px 5px #999 inset;
+	-webkit-box-shadow: -5px -5px 5px #999 inset;
+	-o-box-shadow: -5px -5px 5px #999 inset;/**浏览器兼容性**/
+	box-shadow: -5px -5px 5px #999 inset;/**边框阴影**/
+	border-right: 5px #09F dashed;/**边线**/
+	border-bottom: 5px #09F dashed;/**边线**/
+}
+.rightcontant4 {
+	width: 900px;/*宽度*/
+	height: 430px;/*高度*/
+	float: right;/*右浮动*/
+	padding: 15px;/*上下左右的内边距均为15px*/
+	font-family: 楷体;/**字体样式**/
+	font-size: 24px;/**字体大小**/
+	-webkit-border-radius: 50px 0px 50px 0px;
+	-o-border-radius: 50px 0px 50px 0px;
+	-moz-border-radius: 50px 0px 50px 0px;/*浏览器的兼容性*/
+	border-radius: 50px 0px 50px 0px;/*圆角显示，这样设置之后就可以达到圆的效果*/
+	-moz-box-shadow: 5px 5px 5px #999 inset;
+	-webkit-box-shadow: 5px 5px 5px #999 inset;
+	-o-box-shadow: 5px 5px 5px #999 inset;/**浏览器兼容性**/
+	box-shadow: 5px 5px 5px #999 inset;/**边框阴影**/
+	border-left: 5px #09F dashed;/**边线**/
+}
+.h {
+	height: 30px;/**颜色**/
+	font-family: 华文行楷;/**字体样式**/
+	font-size: 36px;/**字体大小**/
+	text-align: center;/**居中**/
+	color: #039;/**颜色**/
+}
+.e {
+	float: left;/**左浮动**/
+	width: 300px;/**宽度**/
+	height: 1300px;/**高度**/
+	font-family: 华文行楷;/**字体样式**/
+	font-size: 28px;/**字体大小**/
+}
+.f {
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);
+	-moz-box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);
+	box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);/**阴影效果**/
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;/**边框圆角**/
+	float: left;/**左浮动**/
+}
+.g {
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);
+	-moz-box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);
+	box-shadow: inset 0 0 4px rgba(0,0,0,1), inset 0 2px 1px rgba(255,255,255,.5), inset 0 -9px 2px rgba(0,0,0,.6), inset 0 -12px 2px rgba(255,255,255,.3);/**阴影效果**/
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;/**边框圆角**/
+	float: right;/**右浮动**/
+}
+.j {
+	height: 30px;/**高度**/
+	font-family: 华文行楷;/**字体样式**/
+	font-size: 36px;/**字体大小**/
+	text-align: center;/**居中**/
+	color: #C36;/**颜色**/
+}
+.i {
+	height: 30px;/**高度**/
+	font-family: 华文行楷;/**字体样式**/
+	font-size: 36px;/**字体大小**/
+	text-align: center;/**居中**/
+	color: #360;/**颜色**/
+}
+.img1 {
+	cursor: pointer;
+	transition: all 0.6s;
+	opacity: 0.7;/*透明度为0.7*/
+}
+.img1:hover {
+	transform: scale(1.4);
+	opacity: 1;/*透明度为不透明*/
+}
+.img2 {/*对菜单选项进行设置*/
+	opacity: 0.7;/*透明度为0.7*/
+	transition: all 0.6s;/**速度**/
+}
+.img2:hover {/*当鼠标移到元素上方产生的效果*/
+	transform: rotate(-10deg);/*倾斜逆时针10度*/
+	opacity: 1;/*透明度为不透明*/
+}
+.img3 {/*对菜单选项进行设置*/
+	opacity: 0.7;/*透明度为0.7*/
+	transition: all 0.6s;/**速度**/
+}
+.img3:hover {/*当鼠标移到元素上方产生的效果*/
+	transform: rotate(10deg);/*倾斜逆时针10度*/
+	opacity: 1;/*透明度为不透明*/
+}
+#footer {
+	float: left;/**左浮动**/
+	width: 800px;/**宽度**/
+	height: 30px;/**高度**/
+	margin-left: 200px;/**外部左边距**/
+	margin-right: 200px;/**外部右边距**/
+	border: solid #000000 1px;/**边线**/
+	font-size: 20px;/**字体大小**/
+	background-color: #0CF;/**背景颜色**/
+	text-align: center;/**居中**/
+	border-radius: 25px 25px 0px 0px;/*圆角*/
+	font-family: 华文行楷;/**字体样式**/
+	padding-top: 10px;/**字体大小**/
+}
+.time {
+	width: 700;/*宽度*/
+	height: 30px;/*高度*/
+	font-size: 24px;/*字体大小*/
+	float: right;/*右浮动*/
+}
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#pictures {
+	width: 100%;/*宽度*/
+	height: 360px;/*高度*/
+	overflow: hidden;/*隐藏溢出*/
+	position: relative;/*相对位置*/
+}
+#ul1 {
+	position: absolute;/*绝对位置*/
+	left: 0;
+	top: 0;
+	overflow: hidden;/*隐藏溢出*/
+}
+#ul1 li {
+	float: left;/*左浮动*/
+	width: 480px;/*宽度*/
+	height: auto;/*高度*/
+}
+#ul1 li img {
+	width: 480px;/*宽度*/
+	height: auto;
+}
+#navigation {
+	/*整个菜单是个div方块，此id号用来定义此菜单div的*/
+	width: 210px;/*宽度*/
+	font-family: Arial;/*字体*/
+	text-align: center;/*居中*/
+	font-size: 20px;/*字体大小*/
+}
+#navigation > ul {
+	list-style-type: none;/*不显示项目符号*/
+	margin: 0px;
+	padding: 0px;
+}
+#navigation > ul > li {
+	border-bottom: 1px solid #000;/*添加下划线*//*项目边框底线用来显示菜单项的下划线效果，如果把浏览器背景设计成黑色，则菜单项下划线效果就出来了*/
+}
+/*菜单列表项里都有<a>链接标签，用于打开其他链接对象用*/
+#navigation > ul > li > a {
+	display: block;/*区块显示*/
+	padding: 5px 5px 5px 0.5em;
+	text-decoration: none;
+	border-left: 12px solid #069;
+	/*左边的粗边*/
+	border-right: 1px solid #09c;/*右侧阴影*/
+}
+#navigation > ul > li > a:link, #navigation > ul > li > a:visited {
+	background-color: #0CF;
+	color: #ffffff;/*平时菜单显示文字为白色*/
+}
+/*当鼠标移动菜单上时菜单字符讲变成黄色*/
+#navigation > ul > li > a:hover {
+	/*鼠标经过时*/
+	background-color: #069;/*改变背景颜色*/
+	color: #ffff00;/*改变文字颜色*/
+}
+/*子菜单的CSS样式*/
+#navigation ul li ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+#navigation ul li ul li {
+	border-top: 1px solid #0cf;
+}
+#navigation ul li ul li a {
+	display: block;
+	padding: 3px 3px 3px 0.5em;
+	text-decoration: none;
+	border-left: 28px solid #09C;
+	border-right: 1ps solid #099;
+}
+#navigation ul li ul li a:link, #navigation ul li ul li a:visited {
+	background-color: #666;
+	color: #ffffff;/*子菜单平时和访问后显示文字颜色*/
+}
+/*当鼠标移动菜单上时菜单字符讲变色*/
+#navigation ul li ul li a:hover {
+	/*鼠标经过时*/
+	background-color: #111;
+	color: #ffff00;/*子菜单文字颜色*/
+}
+#navigation ul li ul.myHide {
+	/*隐藏子菜单*/
+	display: none;
+}
+#navigation ul li ul.myShow {
+	/*显示子菜单*/
+	display: block;
+}
+</style>
+    <script language="javascript">
+	function change(){
+		//这里的this就是子菜单ul，this.parentNode表示有子菜单那项的主菜单的LI
+		var oSecondDiv = this.parentNode.getElementsByTagName("ul")[0];
+		if(oSecondDiv.className == "myHide")
+			oSecondDiv.className = "myShow";
+		else
+			oSecondDiv.className = "myHide"; 
+	}
+	window.onload = function(){
+		var oUl = document.getElementById("listUL");
+		var aLi = oUl.childNodes;
+		var oA;
+		for(var i=0;i<aLi.length;i++){
+			if(aLi[i].tagName == "LI" && aLi[i].getElementsByTagName("ul").length){
+				oA = aLi[i].firstChild;
+				oA.onclick = change;
+			}
+		}
+		  var oDiv = document.getElementById("pictures");
+            var oUl = document.getElementById("ul1");
+            var speed = -3;
+            var oLi = document.getElementsByTagName("li");
+
+            oUl.innerHTML += oUl.innerHTML;//先把图片增加一组
+            oUl.style.width = oLi.length * oLi[0].offsetWidth + "px";
+
+            function move() {
+                if (oUl.offsetLeft < -oUl.offsetWidth / 2) {
+                    oUl.style.left = "0";
+                }
+                oUl.style.left = oUl.offsetLeft + speed + "px";
+            }
+            var timer = setInterval(move, 30);
+            oDiv.onmouseover = function() {
+                clearInterval(timer);
+            };
+            oDiv.onmouseout = function() {
+                timer = setInterval(move, 30);
+            };
+	}
+
+    </script>
+    </head>
+
+    <body>
+    <div id="container"> <img class="soft-embossed" src="img/2.jpg">
+      <div id="topcontent"> <a href="home.html" style="color: #F00"><!--第一个按钮设置-->
+        <div class="div3" style="background-color: #999"><!--运用类选择器第div3,同时用行内样式设置背景颜色--> 
+        <img src="img/7.png" class="img" width,200px> <br>
+        <br>
+        首页 </div>
+        </a> <a href="school.html" style="color:#936"><!--第三个按钮设置-->
+        <div class="div5" style="background-color: #999"><!--运用类选择器第div5,同时用行内样式设置背景颜色--> 
+          <img src="img/8.png" class="img"> <br>
+          <br>
+          我的学校 </div>
+        </a> <a href="hometown.html" style="color:#606 "><!--第四个按钮设置-->
+        <div class="div6" style="background-color: #999"><!--运用类选择器第div6,同时用行内样式设置背景颜色--> 
+          <img src="img/10.png" class="img"> <br>
+          <br>
+          我的家乡 </div>
+        </a> <a href="index.html" style="color: #000 "><!--第六个按钮设置-->
+        <div class="div7" style="background-color: #999 "><!--运用类选择器第div7,同时用行内样式设置背景颜色--> 
+          <img src="img/12.png" class="img"> <br>
+          <br>
+          返回封面 </div>
+        </a>
+        <div class="time"> <span id=localtime></span> 
+          <script type="text/javascript">
+function showLocale(objD)
+{
+	var str,colorhead,colorfoot;
+	var yy = objD.getYear();
+	if(yy<1900) yy = yy+1900;
+	var MM = objD.getMonth()+1;
+	if(MM<10) MM = '0' + MM;
+	var dd = objD.getDate();
+	if(dd<10) dd = '0' + dd;
+	var hh = objD.getHours();
+	if(hh<10) hh = '0' + hh;
+	var mm = objD.getMinutes();
+	if(mm<10) mm = '0' + mm;
+	var ss = objD.getSeconds();
+	if(ss<10) ss = '0' + ss;
+	var ww = objD.getDay();
+	if  ( ww==0 )  colorhead="<font color=\"#FF0000\">";
+	if  ( ww > 0 && ww < 6 )  colorhead="<font color=\"#373737\">";
+	if  ( ww==6 )  colorhead="<font color=\"#008000\">";
+	if  (ww==0)  ww="星期日";
+	if  (ww==1)  ww="星期一";
+	if  (ww==2)  ww="星期二";
+	if  (ww==3)  ww="星期三";
+	if  (ww==4)  ww="星期四";
+	if  (ww==5)  ww="星期五";
+	if  (ww==6)  ww="星期六";
+	colorfoot="</font>"
+	str = colorhead + yy + "-" + MM + "-" + dd + " " + hh + ":" + mm + ":" + ss + "  " + ww + colorfoot;
+	return(str);
+}
+function tick()
+{
+	var today;
+	today = new Date();
+	document.getElementById("localtime").innerHTML = showLocale(today);
+	window.setTimeout("tick()", 1000);
+}
+tick();/*右上角时间戳*/
+</script> 
+        </div>
+      </div>
+      <div class="b">
+        <p class="a">云阳</p>
+      </div>
+      <div class="e">
+        <div id="navigation">
+          <ul id="listUL">
+            <!--主菜单无序列表-->
+            <li><a href="#jianjie">故乡简介</a></li>
+            <li><a href="#"> 照片</a> 
+              <!--子菜单无序列表-->
+              <ul class="myHide">
+                <li><a href="#ln">美景和特产</a></li>
+              </ul>
+            </li>
+            <li><a href="#">景点</a> 
+              <!--子菜单无序列表-->
+              <ul class="myHide">
+                <li><a href="#zfm">张飞庙</a></li>
+                <li><a href="#lg">龙缸</a></li>
+                <li><a href="#dyt">登云梯</a></li>
+                <li><a href="#kl">化石群</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!--主菜单无序列表结束--> 
+        </div>
+        </br>
+        </br>
+        </br>
+        &nbsp;&nbsp; <a name="jianjie"></a> 
+        <script language="javascript">
+function Delta(sHex1,sHex2,iNum){
+	//计算每个字的变化量
+	var iHex1 = parseInt("0x"+sHex1);
+	var iHex2 = parseInt("0x"+sHex2);
+	return (iHex2 - iHex1)/(iNum-1);
+}
+function Colorful(sText,sColor1,sColor2){
+	if(sText.length<=1){
+//如果只有一个字符，渐变无从谈起，直接输出并返回
+	document.write("<font style= 'color:#"+sColor1+";'>"+sText+"</font>");
+		return;
+	}
+//RGB三色分离，分别获取变化的小量delta
+var fDeltaR = Delta(sColor1.substring(0,2), sColor2.substring(0,2),sText.length);
+var fDeltaG = Delta(sColor1.substring(2,4), sColor2.substring(2,4),sText.length);
+var fDeltaB = Delta(sColor1.substring(4,6), sColor2.substring(4,6),sText.length);
+var sColorR = parseInt("0x"+sColor1.substring(0,2));	
+var sColorG = parseInt("0x"+sColor1.substring(2,4));
+var sColorB = parseInt("0x"+sColor1.substring(4,6));
+for(var i=0;i<sText.length;i++){
+	document.write("<font style= 'color:rgb("+Math.round(sColorR)+","+Math.round(sColorG)+","+Math.round(sColorB)+");'>"+sText.substring(i,i+1)+"</font>");
+/*每输出一个字符，颜色的三个分量都相应的变化
+当字符输出完成时，正好由sColor1变成sColor2*/
+		sColorR += fDeltaR;
+		sColorG += fDeltaG;
+		sColorB += fDeltaB;
+		}
+}
+Colorful("云阳县位于重庆市东北部，距重庆主城九区310公里，是三峡库区生态经济区沿江经济走廊承东启西、南引北联的重要枢纽。","3366ff","ff3300")</script></br>
+        <script language="javascript">
+function Delta(sHex1,sHex2,iNum){
+	//计算每个字的变化量
+	var iHex1 = parseInt("0x"+sHex1);
+	var iHex2 = parseInt("0x"+sHex2);
+	return (iHex2 - iHex1)/(iNum-1);
+}
+function Colorful(sText,sColor1,sColor2){
+	if(sText.length<=1){
+//如果只有一个字符，渐变无从谈起，直接输出并返回
+	document.write("<font style= 'color:#"+sColor1+";'>"+sText+"</font>");
+		return;
+	}
+//RGB三色分离，分别获取变化的小量delta
+var fDeltaR = Delta(sColor1.substring(0,2), sColor2.substring(0,2),sText.length);
+var fDeltaG = Delta(sColor1.substring(2,4), sColor2.substring(2,4),sText.length);
+var fDeltaB = Delta(sColor1.substring(4,6), sColor2.substring(4,6),sText.length);
+var sColorR = parseInt("0x"+sColor1.substring(0,2));	
+var sColorG = parseInt("0x"+sColor1.substring(2,4));
+var sColorB = parseInt("0x"+sColor1.substring(4,6));
+for(var i=0;i<sText.length;i++){
+	document.write("<font style= 'color:rgb("+Math.round(sColorR)+","+Math.round(sColorG)+","+Math.round(sColorB)+");'>"+sText.substring(i,i+1)+"</font>");
+/*每输出一个字符，颜色的三个分量都相应的变化
+当字符输出完成时，正好由sColor1变成sColor2*/
+		sColorR += fDeltaR;
+		sColorG += fDeltaG;
+		sColorB += fDeltaB;
+		}
+}
+Colorful("云阳县东与奉节县相连，西与万州区相接，南与湖北省恩施州利川市相邻，北与开州区、巫溪县为界。县境南北长99.5公里，东西宽70.2公里，总面积3649平方公里。至2015年12月28日，云阳县辖4个街道、31个镇、7个乡（1个民族乡）；常住人口89.87万人，户籍人口135.96万人。云阳县列入《全国文物分布图》的古建筑、古遗址、古墓葬、石刻造像等文物145处，其中：国家级文物保护单位1处，省级保护单位3处，县级文物保护单位16处，名列长江三峡库区各县之首。","FF3300","3366FF")
+</script><br/>
+        <a href="https://baike.baidu.com/item/%E4%BA%91%E9%98%B3%E5%8E%BF/136052?fr=aladdin">查看更多</a> </div>
+      <div class="rightcontant1">
+        <p class="d"><a name="zfm">张飞庙</a></p>
+        &nbsp;&nbsp;&nbsp;&nbsp;<img src="img/24.jpg" class="f img2"> 
+        <script language="javascript">
+function Delta(sHex1,sHex2,iNum){
+	//计算每个字的变化量
+	var iHex1 = parseInt("0x"+sHex1);
+	var iHex2 = parseInt("0x"+sHex2);
+	return (iHex2 - iHex1)/(iNum-1);
+}
+function Colorful(sText,sColor1,sColor2){
+	if(sText.length<=1){
+//如果只有一个字符，渐变无从谈起，直接输出并返回
+	document.write("<font style= 'color:#"+sColor1+";'>"+sText+"</font>");
+		return;
+	}
+//RGB三色分离，分别获取变化的小量delta
+var fDeltaR = Delta(sColor1.substring(0,2), sColor2.substring(0,2),sText.length);
+var fDeltaG = Delta(sColor1.substring(2,4), sColor2.substring(2,4),sText.length);
+var fDeltaB = Delta(sColor1.substring(4,6), sColor2.substring(4,6),sText.length);
+var sColorR = parseInt("0x"+sColor1.substring(0,2));	
+var sColorG = parseInt("0x"+sColor1.substring(2,4));
+var sColorB = parseInt("0x"+sColor1.substring(4,6));
+for(var i=0;i<sText.length;i++){
+	document.write("<font style= 'color:rgb("+Math.round(sColorR)+","+Math.round(sColorG)+","+Math.round(sColorB)+");'>"+sText.substring(i,i+1)+"</font>");
+/*每输出一个字符，颜色的三个分量都相应的变化
+当字符输出完成时，正好由sColor1变成sColor2*/
+		sColorR += fDeltaR;
+		sColorG += fDeltaG;
+		sColorB += fDeltaB;
+		}
+}
+Colorful("张飞庙，又名张桓侯庙，位于重庆市云阳县盘石镇龙宝村狮子岩下，系为纪念三国时期蜀汉名将张飞而修建。 张飞庙始建于蜀汉末期，距今已有1700多年的历史。后经宋、元、明、清历代扩建，现存建筑面积1400平方米，琉璃粉墙，金碧辉煌。殿宇群，依山取势，庙内碑刻书画丰富。国家AAAA级旅游景区——张飞庙，又名张桓候庙，于1700年前为纪念蜀汉名将张飞而建。“楼台高倚凤凰山，英烈勋名未易攀。天下三分扶汉室，军中一怒释严颜。蜀江波暖沙鸥浴，楚寒风清战军闲。千古传布能重土，长留香火翠微间”，这是元朝名士冯衔祭祀张飞的诗句。","FF3300","3366FF")
+	  </script></br>
+        <img src="img/30.jpg" class="img3 g"> 
+        <script language="javascript">
+function Delta(sHex1,sHex2,iNum){
+	//计算每个字的变化量
+	var iHex1 = parseInt("0x"+sHex1);
+	var iHex2 = parseInt("0x"+sHex2);
+	return (iHex2 - iHex1)/(iNum-1);
+}
+function Colorful(sText,sColor1,sColor2){
+	if(sText.length<=1){
+//如果只有一个字符，渐变无从谈起，直接输出并返回
+	document.write("<font style= 'color:#"+sColor1+";'>"+sText+"</font>");
+		return;
+	}
+//RGB三色分离，分别获取变化的小量delta
+var fDeltaR = Delta(sColor1.substring(0,2), sColor2.substring(0,2),sText.length);
+var fDeltaG = Delta(sColor1.substring(2,4), sColor2.substring(2,4),sText.length);
+var fDeltaB = Delta(sColor1.substring(4,6), sColor2.substring(4,6),sText.length);
+var sColorR = parseInt("0x"+sColor1.substring(0,2));	
+var sColorG = parseInt("0x"+sColor1.substring(2,4));
+var sColorB = parseInt("0x"+sColor1.substring(4,6));
+for(var i=0;i<sText.length;i++){
+	document.write("<font style= 'color:rgb("+Math.round(sColorR)+","+Math.round(sColorG)+","+Math.round(sColorB)+");'>"+sText.substring(i,i+1)+"</font>");
+/*每输出一个字符，颜色的三个分量都相应的变化
+当字符输出完成时，正好由sColor1变成sColor2*/
+		sColorR += fDeltaR;
+		sColorG += fDeltaG;
+		sColorB += fDeltaB;
+		}
+}
+Colorful("云阳张飞庙雄踞在长江南岸的巨崖上，背负浓荫蔽日，万木葱茏的凤凰山、琵琶山，依山取势，层层迭起殿宇巍峨，气势恢宏。朱楼碧瓦倒映江流，火珠鸥尾直妆蓝天。清末著名书法家彭聚星手书的“江上风清”四个大字，高悬在面江庙壁上，更增添了庙庄严肃穆的气势。张飞庙还收藏汉唐以来的石刻、木刻、字画600余件及新石器时期以来的其它文物1000余件。","3366FF","FF3300")
+</script></br>
+      </div>
+      <div class="rightcontant2">
+        <p class="h"><a name="lg">龙缸</a></p>
+        <br/>
+        &nbsp;&nbsp; 
+        <script language="javascript">
+function Delta(sHex1,sHex2,iNum){
+	//计算每个字的变化量
+	var iHex1 = parseInt("0x"+sHex1);
+	var iHex2 = parseInt("0x"+sHex2);
+	return (iHex2 - iHex1)/(iNum-1);
+}
+function Colorful(sText,sColor1,sColor2){
+	if(sText.length<=1){
+//如果只有一个字符，渐变无从谈起，直接输出并返回
+	document.write("<font style= 'color:#"+sColor1+";'>"+sText+"</font>");
+		return;
+	}
+//RGB三色分离，分别获取变化的小量delta
+var fDeltaR = Delta(sColor1.substring(0,2), sColor2.substring(0,2),sText.length);
+var fDeltaG = Delta(sColor1.substring(2,4), sColor2.substring(2,4),sText.length);
+var fDeltaB = Delta(sColor1.substring(4,6), sColor2.substring(4,6),sText.length);
+var sColorR = parseInt("0x"+sColor1.substring(0,2));	
+var sColorG = parseInt("0x"+sColor1.substring(2,4));
+var sColorB = parseInt("0x"+sColor1.substring(4,6));
+for(var i=0;i<sText.length;i++){
+	document.write("<font style= 'color:rgb("+Math.round(sColorR)+","+Math.round(sColorG)+","+Math.round(sColorB)+");'>"+sText.substring(i,i+1)+"</font>");
+/*每输出一个字符，颜色的三个分量都相应的变化
+当字符输出完成时，正好由sColor1变成sColor2*/
+		sColorR += fDeltaR;
+		sColorG += fDeltaG;
+		sColorB += fDeltaB;
+		}
+}
+Colorful("云阳龙缸风景区：国家AAAAA级旅游景区、国家地质公园、2016国庆“旅游服务最佳景区”，被旅行者称为长江三峡最后的“香格里拉”，被户外","ff3300","3366ff")
+ </script><img src="img/26.jpg" class="f img1"> 
+        <script language="javascript">
+function Delta(sHex1,sHex2,iNum){
+	//计算每个字的变化量
+	var iHex1 = parseInt("0x"+sHex1);
+	var iHex2 = parseInt("0x"+sHex2);
+	return (iHex2 - iHex1)/(iNum-1);
+}
+function Colorful(sText,sColor1,sColor2){
+	if(sText.length<=1){
+//如果只有一个字符，渐变无从谈起，直接输出并返回
+	document.write("<font style= 'color:#"+sColor1+";'>"+sText+"</font>");
+		return;
+	}
+//RGB三色分离，分别获取变化的小量delta
+var fDeltaR = Delta(sColor1.substring(0,2), sColor2.substring(0,2),sText.length);
+var fDeltaG = Delta(sColor1.substring(2,4), sColor2.substring(2,4),sText.length);
+var fDeltaB = Delta(sColor1.substring(4,6), sColor2.substring(4,6),sText.length);
+var sColorR = parseInt("0x"+sColor1.substring(0,2));	
+var sColorG = parseInt("0x"+sColor1.substring(2,4));
+var sColorB = parseInt("0x"+sColor1.substring(4,6));
+for(var i=0;i<sText.length;i++){
+	document.write("<font style= 'color:rgb("+Math.round(sColorR)+","+Math.round(sColorG)+","+Math.round(sColorB)+");'>"+sText.substring(i,i+1)+"</font>");
+/*每输出一个字符，颜色的三个分量都相应的变化
+当字符输出完成时，正好由sColor1变成sColor2*/
+		sColorR += fDeltaR;
+		sColorG += fDeltaG;
+		sColorB += fDeltaB;
+		}
+}
+Colorful("爱好者誉为重庆版的“小华山”。云阳龙缸风景区位于重庆市云阳县境内东南隅，紧邻湖北利川市，集天坑、峡谷、溶洞、高山草场、森林、土家风情于一体，主要景点有龙缸天坑、云端廊桥、龙洞风光、龙窟峡、岐山草场、蔈草古长城、岐阳关古道遗址、盖下坝湖泊等。其中龙缸天坑深335米，居全国第三、世","3366ff","ff3300")
+ </script> 
+        <img src="img/27.jpg" class="g img2"> 
+        <script language="javascript">
+function Delta(sHex1,sHex2,iNum){
+	//计算每个字的变化量
+	var iHex1 = parseInt("0x"+sHex1);
+	var iHex2 = parseInt("0x"+sHex2);
+	return (iHex2 - iHex1)/(iNum-1);
+}
+function Colorful(sText,sColor1,sColor2){
+	if(sText.length<=1){
+//如果只有一个字符，渐变无从谈起，直接输出并返回
+	document.write("<font style= 'color:#"+sColor1+";'>"+sText+"</font>");
+		return;
+	}
+//RGB三色分离，分别获取变化的小量delta
+var fDeltaR = Delta(sColor1.substring(0,2), sColor2.substring(0,2),sText.length);
+var fDeltaG = Delta(sColor1.substring(2,4), sColor2.substring(2,4),sText.length);
+var fDeltaB = Delta(sColor1.substring(4,6), sColor2.substring(4,6),sText.length);
+var sColorR = parseInt("0x"+sColor1.substring(0,2));	
+var sColorG = parseInt("0x"+sColor1.substring(2,4));
+var sColorB = parseInt("0x"+sColor1.substring(4,6));
+for(var i=0;i<sText.length;i++){
+	document.write("<font style= 'color:rgb("+Math.round(sColorR)+","+Math.round(sColorG)+","+Math.round(sColorB)+");'>"+sText.substring(i,i+1)+"</font>");
+/*每输出一个字符，颜色的三个分量都相应的变化
+当字符输出完成时，正好由sColor1变成sColor2*/
+		sColorR += fDeltaR;
+		sColorG += fDeltaG;
+		sColorB += fDeltaB;
+		}
+}
+Colorful("界第五，龙缸天坑的坑壁由峭壁拱成，倾斜幅度近90度，这种直上直下的形态在世界上极为罕见，享有“天下第一缸”的美誉。云阳龙缸风景区建在海拔1010米高悬崖上的“云端廊桥”，以“天空之花”的花瓣作为造型，廊桥上可以720°欣赏周边美景。其悬挑长度26.68米，廊桥距离地面高度718米，比美国科罗拉多大峡谷玻璃廊桥悬挑长度还长5.34米，是世界最长悬挑玻璃廊桥。;云阳龙缸景区内地貌奇特，溶洞密布，奇峰怪石、石笋摩天、雄险俊秀、千姿百态、多彩多姿，是自然科学的博物馆、地质景观的大观园。龙缸四季，景色各异，春之花草，夏之飞瀑，秋之红叶，冬之白雪，无不令人为之叫绝。[1]  2017年2月25日，新晋为国家5A级旅游景区。","ff3300","3366ff")
+</script></br>
+      </div>
+      <div class="leftcontant2">
+        <div  style="width:100%;"> <a name="ln"></a>
+          <div id="pictures">
+            <ul id="ul1">
+              <li><img src="img/pian.jpg" alt=""></li>
+              <li><img src="img/gang.jpg" alt=""></li>
+              <li><img src="img/tian.jpg" alt=""></li>
+              <li><img src="img/qiao.jpg" alt=""></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="rightcontant3">
+        <p class="i"><a name="dyt">登云梯</a></p>
+        <br/>
+        &nbsp;&nbsp;<img src="img/25.jpg" class="g img1"> 
+        <script language="javascript">
+function Delta(sHex1,sHex2,iNum){
+	//计算每个字的变化量
+	var iHex1 = parseInt("0x"+sHex1);
+	var iHex2 = parseInt("0x"+sHex2);
+	return (iHex2 - iHex1)/(iNum-1);
+}
+function Colorful(sText,sColor1,sColor2){
+	if(sText.length<=1){
+//如果只有一个字符，渐变无从谈起，直接输出并返回
+	document.write("<font style= 'color:#"+sColor1+";'>"+sText+"</font>");
+		return;
+	}
+//RGB三色分离，分别获取变化的小量delta
+var fDeltaR = Delta(sColor1.substring(0,2), sColor2.substring(0,2),sText.length);
+var fDeltaG = Delta(sColor1.substring(2,4), sColor2.substring(2,4),sText.length);
+var fDeltaB = Delta(sColor1.substring(4,6), sColor2.substring(4,6),sText.length);
+var sColorR = parseInt("0x"+sColor1.substring(0,2));	
+var sColorG = parseInt("0x"+sColor1.substring(2,4));
+var sColorB = parseInt("0x"+sColor1.substring(4,6));
+for(var i=0;i<sText.length;i++){
+	document.write("<font style= 'color:rgb("+Math.round(sColorR)+","+Math.round(sColorG)+","+Math.round(sColorB)+");'>"+sText.substring(i,i+1)+"</font>");
+/*每输出一个字符，颜色的三个分量都相应的变化
+当字符输出完成时，正好由sColor1变成sColor2*/
+		sColorR += fDeltaR;
+		sColorG += fDeltaG;
+		sColorB += fDeltaB;
+		}
+}
+Colorful("云阳县登云梯位于重庆市云阳县城中央，于1999年动工兴建，2009年底完工，它起于云阳新县城长江边的滨江大道，顺坡而上，横贯城市中央，止于新县城制高点磐石城下。梯道长1450米，宽30米，垂直高差达200多米，梯道1975级。登云梯以其独特造型、宏大规模被誉为“万里长江第一梯”，形成了难得一见的“层叠分区、云梯万步”的壮美景观。2009年，云阳登云梯成功申办为“世界最长的城市人字梯” 。","3366ff","ff3300")</script></br>
+        &nbsp;&nbsp;<img src="img/32.jpg" class="f img3"> 
+        <script language="javascript">
+function Delta(sHex1,sHex2,iNum){
+	//计算每个字的变化量
+	var iHex1 = parseInt("0x"+sHex1);
+	var iHex2 = parseInt("0x"+sHex2);
+	return (iHex2 - iHex1)/(iNum-1);
+}
+function Colorful(sText,sColor1,sColor2){
+	if(sText.length<=1){
+//如果只有一个字符，渐变无从谈起，直接输出并返回
+	document.write("<font style= 'color:#"+sColor1+";'>"+sText+"</font>");
+		return;
+	}
+//RGB三色分离，分别获取变化的小量delta
+var fDeltaR = Delta(sColor1.substring(0,2), sColor2.substring(0,2),sText.length);
+var fDeltaG = Delta(sColor1.substring(2,4), sColor2.substring(2,4),sText.length);
+var fDeltaB = Delta(sColor1.substring(4,6), sColor2.substring(4,6),sText.length);
+var sColorR = parseInt("0x"+sColor1.substring(0,2));	
+var sColorG = parseInt("0x"+sColor1.substring(2,4));
+var sColorB = parseInt("0x"+sColor1.substring(4,6));
+for(var i=0;i<sText.length;i++){
+	document.write("<font style= 'color:rgb("+Math.round(sColorR)+","+Math.round(sColorG)+","+Math.round(sColorB)+");'>"+sText.substring(i,i+1)+"</font>");
+/*每输出一个字符，颜色的三个分量都相应的变化
+当字符输出完成时，正好由sColor1变成sColor2*/
+		sColorR += fDeltaR;
+		sColorG += fDeltaG;
+		sColorB += fDeltaB;
+		}
+}
+Colorful("登云梯所用石材全部选用三峡库区特有的青花石料，由当地传统工匠全手工精心雕砌而成。这每一级石阶，都凝聚着工匠们无数的心血。1519步石梯，如一个大写的人字，从高耸的磐石城垂挂而下，一直曳到长江边上，大有凌空穿云之势。梯道两旁宽阔的绿化带，那由红花绿叶组成的美丽图案，就像两条精美的彩缎，与梯道相偎相依，一直铺到天边，与天边的云霞相接。2014年，云阳县将三峡文物园，城市登云梯，磐石城一同申报国家AAAA（4A）级旅游风景区。","ff3300","3366ff")</script></br>
+      </div>
+      <div class="rightcontant4">
+        <p class="j"><a name="kl">恐龙化石群</a></p>
+        <br/>
+        <img src="img/33.jpg" class="f img1"> &nbsp;&nbsp; 
+        <script language="javascript">
+function Delta(sHex1,sHex2,iNum){
+	//计算每个字的变化量
+	var iHex1 = parseInt("0x"+sHex1);
+	var iHex2 = parseInt("0x"+sHex2);
+	return (iHex2 - iHex1)/(iNum-1);
+}
+function Colorful(sText,sColor1,sColor2){
+	if(sText.length<=1){
+//如果只有一个字符，渐变无从谈起，直接输出并返回
+	document.write("<font style= 'color:#"+sColor1+";'>"+sText+"</font>");
+		return;
+	}
+//RGB三色分离，分别获取变化的小量delta
+var fDeltaR = Delta(sColor1.substring(0,2), sColor2.substring(0,2),sText.length);
+var fDeltaG = Delta(sColor1.substring(2,4), sColor2.substring(2,4),sText.length);
+var fDeltaB = Delta(sColor1.substring(4,6), sColor2.substring(4,6),sText.length);
+var sColorR = parseInt("0x"+sColor1.substring(0,2));	
+var sColorG = parseInt("0x"+sColor1.substring(2,4));
+var sColorB = parseInt("0x"+sColor1.substring(4,6));
+for(var i=0;i<sText.length;i++){
+	document.write("<font style= 'color:rgb("+Math.round(sColorR)+","+Math.round(sColorG)+","+Math.round(sColorB)+");'>"+sText.substring(i,i+1)+"</font>");
+/*每输出一个字符，颜色的三个分量都相应的变化
+当字符输出完成时，正好由sColor1变成sColor2*/
+		sColorR += fDeltaR;
+		sColorG += fDeltaG;
+		sColorB += fDeltaB;
+		}
+}
+Colorful("2017年6月28日，重庆市政府新闻办召开发布会宣布，经国家古生物化石专家委员会鉴定，重庆云阳县普安乡发现的恐龙化石群为世界级恐龙化石群，具有时代跨度大、分布密集且范围广、种类丰富等特点，有非常高的科学价值和开发利用价值，是我国乃至世界研究领域的一个重大发现。","ff3300","3366ff")</script></br>
+        &nbsp;&nbsp; <script language="javascript">
+function Delta(sHex1,sHex2,iNum){
+	//计算每个字的变化量
+	var iHex1 = parseInt("0x"+sHex1);
+	var iHex2 = parseInt("0x"+sHex2);
+	return (iHex2 - iHex1)/(iNum-1);
+}
+function Colorful(sText,sColor1,sColor2){
+	if(sText.length<=1){
+//如果只有一个字符，渐变无从谈起，直接输出并返回
+	document.write("<font style= 'color:#"+sColor1+";'>"+sText+"</font>");
+		return;
+	}
+//RGB三色分离，分别获取变化的小量delta
+var fDeltaR = Delta(sColor1.substring(0,2), sColor2.substring(0,2),sText.length);
+var fDeltaG = Delta(sColor1.substring(2,4), sColor2.substring(2,4),sText.length);
+var fDeltaB = Delta(sColor1.substring(4,6), sColor2.substring(4,6),sText.length);
+var sColorR = parseInt("0x"+sColor1.substring(0,2));	
+var sColorG = parseInt("0x"+sColor1.substring(2,4));
+var sColorB = parseInt("0x"+sColor1.substring(4,6));
+for(var i=0;i<sText.length;i++){
+	document.write("<font style= 'color:rgb("+Math.round(sColorR)+","+Math.round(sColorG)+","+Math.round(sColorB)+");'>"+sText.substring(i,i+1)+"</font>");
+/*每输出一个字符，颜色的三个分量都相应的变化
+当字符输出完成时，正好由sColor1变成sColor2*/
+		sColorR += fDeltaR;
+		sColorG += fDeltaG;
+		sColorB += fDeltaB;
+		}
+}
+Colorful("通过抢救性发掘，已形成长150米、厚2米、高8米的“恐龙化石墙”，墙体面积达1155平方米，含17个化石富集小区。据探测，墙下仍有大量恐龙化石，埋藏深度至少20米。距核心区约一公里的早侏罗世自流井组地层中，同样有较密集的恐龙化石出露。以国家古生物化石专家委员会副主任、中科院古脊椎动物与古人类研究所所长周忠和院士为组长的专家组鉴定认为：云阳普安恐龙化石群具有时代跨度大、分布密集且范围广、种类丰富等特点，具有非常高的科学价值和开发利用价值，是我国乃至世界研究领域的一个重大发现。","3366ff","ff3300")</script></br>
+      </div>
+      <div id="footer"> ——重庆师范大学计算机与信息科学学院2017级计科 谭虹制作&copy;版权所有 —— </div>
+    </div>
+</body>
+</html>
