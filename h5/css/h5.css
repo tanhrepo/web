@@ -1,9 +1,8 @@
-html,body{
+/* html,body{
 	height: 100%;
 	width: 100%;
-	/* display: table; */
 	overflow: hidden;
-}
+} */
 .box{
 	box-sizing: border-box;
 	width: 100px;
@@ -13,11 +12,30 @@ html,body{
 	font-size: 16px;
 	border: 1px solid lightblue;
 	background-color: #ADD8E6;
-	
+	/* position: absolute; */
 }
 body{
-	position: relative;
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+	width: 500px;
+	height: 500px;
 }
+
+.box{
+	display: inline-block;
+}
+/* 弹性布局 */
+/* 里面的内容沿着主轴（x轴）居中 */
+/* 交叉轴（y轴) */
+
+/* body{
+	position: relative;
+	display: flex;	
+	justify-content: center;	
+	align-items: center;	
+} */
+
 /* .box{
 	position: absolute;
 	top: 50%;
@@ -33,9 +51,9 @@ body{
 	bottom: 0;
 	margin: auto;
 } */
-.box{
+/* .box{
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-}
+} */

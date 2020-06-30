@@ -22,3 +22,12 @@
 // function myFunction() {
 // 	document.getElementById("demo").innerHTML = a * a;
 // 	}
+
+// let HTML=document.documentElement,
+// 				winW=HTML.clientWidth;
+// 				winH=HTML.clientHeight;
+// 				boxW=box.offsetWidth;
+// 				boxH=box.offsetHeight;
+// 			box.style.position="absolute";
+// 			box.style.left=(winW-boxW)/2+'px';
+// 			box.style.top=(winH-boxH)/2+'px';
