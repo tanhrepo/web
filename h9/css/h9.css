@@ -1,0 +1,33 @@
+html,body{
+	height: 100%;
+	overflow: hidden;
+}
+
+.container{
+	position: relative;
+	height: 100%;
+	background: lightgoldenrodyellow;
+}
+
+.left,
+.right{
+	position: absolute;
+	top: 0;
+	width: 200px;
+	min-height: 200px;
+	background: lightblue;
+}
+
+.left{
+	left: 0;
+}
+
+.right{
+	right: 0;
+}
+
+.center{
+	margin: 0 200px;
+	min-height: 400px;
+	background: lightcoral;
+}
