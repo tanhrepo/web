@@ -19,18 +19,16 @@
 						<li class="active"><a href="">SP</a></li>
 						<li><a href="">SSR</a></li>
 						<li><a href="">SR</a></li>
-						<li class="dropdown">
-						          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">非洲人 <span class="caret"></span></a>
-						          <ul class="dropdown-menu">
-						            <li><a href="#">1</a></li>
-						            <li><a href="#">2</a></li>
-						            <li><a href="#">3</a></li>
-						            <li role="separator" class="divider"></li>
-						            <li><a href="#">1</a></li>
-						            <li role="separator" class="divider"></li>
-						            <li><a href="#">2</a></li>
-						          </ul>
-						        </li>
+						<li role="presentation" class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">
+						欧皇<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu" id="damu-nav">
+							<li role="presentation"><a href="#home" tabindex="-1" role="menuitem">hello1</a></li>
+							<li role="presentation"><a href="#profile" tabindex="-1" role="menuitem">hello2</a></li>
+							<li role="presentation"><a href="#messages" tabindex="-1" role="menuitem">hello3</a></li>
+							<li role="presentation"><a href="#settings" tabindex="-1" role="menuitem">hello4</a></li>
+						</ul>
+						</li>
+						<li><a href="#myModal" data-toggle="modal">关于</a></li>
 					</ul>
 					<form class="navbar-form navbar-right" role="reach">
 						<div class="from-group">
@@ -98,7 +96,7 @@
 						<h3>跗骨清姬</h3>
 						<p>新式神情报！<br>
 						※缠念作茧·蛇骨缚心！全新SP阶式神缚骨清姬（CV：行成桃姬）降临平安京！</p>
-						<p><a href="#" class="btn btn-primary" role="button">了解更多</a></p>
+						<p><a href="#demo" class="btn btn-primary" role="button">了解更多</a></p>
 			        </div>
 			  </div>
 			  <div class="col-sm-6 col-md-4 text-center">
@@ -107,7 +105,7 @@
 			  			<h3>蛇骨缚心</h3>
 			  			<p>缠念作茧，蛇骨缚心！<br>
 						※为了净化云外镜碎片，离开京都的晴明途经日高川，救起了重伤的青坊主。</p>
-			  			<p><a href="#" class="btn btn-primary" role="button">了解更多</a></p>
+			  			<p><a href="#demo" class="btn btn-primary" role="button">了解更多</a></p>
 			        </div>
 			  </div>
 			  <div class="col-sm-6 col-md-4 text-center">
@@ -116,7 +114,7 @@
 			  			<h3>苍风一目连</h3>
 			  			<p>全新秘闻副本「山巅之禁」开启！<br>
 						※新增挑战副本——苍风一目连秘闻副本「山巅之禁」。「山巅之禁」「山巅之禁」</p>
-			  			<p><a href="#" class="btn btn-primary" role="button">了解更多</a></p>
+			  			<p><a href="#demo" class="btn btn-primary" role="button">了解更多</a></p>
 			        </div>
 			  </div>
 			</div>
@@ -124,7 +122,7 @@
 			<hr >
 		</div>
 		<!-- 标签页 -->
-		<div class="container damu-lab">
+		<div class="container damu-lab" id="demo">
 			<!-- Nav tabs -->
 			  <ul class="nav nav-tabs" role="tablist">
 			    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">跗骨清姬</a></li>
@@ -193,13 +191,30 @@
 						</div>
 					</div>
 				</div>
-			    <div role="tabpanel" class="tab-pane" id="settings">...</div>
+			    <div role="tabpanel" class="tab-pane" id="settings">敬请期待</div>
 			  </div>
 		</div>
 		<!-- 版权 -->
 		<div class="container damu-foot">&copy;重庆师范大学计科谭虹</div>
 		
-		
+		<!-- 模态框 -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		    <div class="modal-dialog" role="document">
+		        <div class="modal-content">
+					<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">该网页用Bootstrap制作</h4>
+					</div>
+					<div class="modal-body">
+						<h4>作者：谭虹</h4>
+						<h4>邮箱：2446871238@qq.com</h4>
+					</div>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					</div>
+				</div>
+		    </div>
+		</div>
 		
 		
 		
