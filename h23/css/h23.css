@@ -1,0 +1,10 @@
+#mydiv{
+	width: 100px;
+	height: 100px;
+	background: lightcoral;
+	-webkit-transition: width 2s;
+	transition: width 2s;
+}
+#mydiv:hover{
+	width: 400px;
+}
