@@ -11,7 +11,7 @@ var app = new Vue({
 			 console.log('天气查询');
 			 console.log(this.city);
 			var that = this;
-			axios.get('http://wthrcdn.etouch.cn/weather_mini?city='+this.city)
+			axios.get('https://wthrcdn.etouch.cn/weather_mini?city='+this.city)
 			.then(function(response){
 			    console.log(response);
 			//     console.log(response.data.data.forecast);
