@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/h25.css"/>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<!-- <script>Vue.config.productionTip = false </script> -->
+	</head>
+	<body>
+		<div id="app">
+		  {{ message }}
+		</div>
+		
+		<div id="app-2">
+		  <span v-bind:title="message">
+		    鼠标悬停几秒钟查看此处动态绑定的提示信息！
+		  </span>
+		</div>
+		
+		<div id="app-3">
+			<h2 v-text="message+'!'">qianduan</h2>
+			<h2 v-text="info+'!'"></h2>
+			<h2>{{message+'!'}}前端</h2>
+		</div>
+		
+		<div id="app-4">
+			<input type="button" name="" id="" value="v-on" v-on:click="doIt()" />
+			<input type="button" name="" id="" value="v-on" @click="doIt()" />
+			<input type="button" name="" id="" value="v-on" @dblclick="doIt()" />
+			<h2 @click="change()">{{food}}</h2>
+		</div>
+		
+		<div id="app-5">
+			<div class="btn1">
+				<button type="button" @click="sub()">-</button>
+				<span>{{num}}</span>
+				<button type="button" @click="add()">+</button>
+			</div>
+		</div>
+		
+		<div id="app-6">
+			<button type="button" @click="changeisShow()">隐藏图片</button>
+			<img v-show="isShow" src="img/btn03.png" >
+		</div>
+		
+		<div id="app-7">
+			<img v-bind:src="imgSrc" ><br>
+			<img :src="imgSrc" :title="imgTitle" :class="{active:isActive}" @click="toggleActive()"><br>
+			<img :src="imgSrc" :title="imgTitle" :class="isActive?'active':''" @click="toggleActive()"><br>
+			<!-- <img v-bind:src="imgSrc" ><br> -->
+		</div>
+		
+		<div id="app-8">
+			<div class="center">
+				<!-- 向左 -->
+				<a href="#" v-show="index!=0" @click="prev">
+					<img src="img/left.png" >
+				</a>
+				<!-- 图片 -->
+				<img :src="imgArr[index]" >
+				<!-- 向右 -->
+				<a href="#" v-show="index!=imgArr.length-1" @click="next">
+					<img src="img/right.png" >
+				</a>
+			</div>
+		</div>
+		
+		<div id="app-9">
+			<input type="button" value="点击" @click="doIt(666,'老铁')"/>
+			<input type="text" @keyup.enter ="sayHi()"/>
+		</div>
+		
+		<div id="app-10">
+			<input type="text" v-model="message" @keyup.enter="getM()"/>
+			<h2>{{message}}</h2>
+			<button type="button" @click="setM()">改变message</button>
+		</div>
+		
+		
+		<script src="js/h25.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
