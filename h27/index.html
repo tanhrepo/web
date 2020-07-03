@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>vue记事本</title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body>
+		<body>
+		  <!-- 主体区域 -->
+		  <section id="todoapp">
+		    <!-- 输入框 -->
+		    <header class="header">
+		      <h1>虹的便签本</h1>
+		      <input v-model="inputValue" @keyup.enter="add()"
+		        autofocus="autofocus"
+		        autocomplete="off"
+		        placeholder="请输入任务"
+		        class="new-todo"
+		      />
+		    </header>
+		    <!-- 列表区域 -->
+		    <section class="main">
+		      <ul class="todo-list">
+		        <li class="todo" v-for="(item,index) in list">
+		          <div class="view">
+		            <span class="index">{{index}}.</span> <label>{{item}}</label>
+		            <button class="destroy" @click="remove(index)"></button>
+		          </div>
+		        </li>
+		      </ul>
+		    </section>
+		    <!-- 统计和清空 -->
+		    <footer class="footer">
+		      <span class="todo-count" v-if="list.length!=0"> <strong>{{list.length}}</strong> 条数据 </span>
+		      <button class="clear-completed" v-show="list.length!=0" @click="clear()">
+		        清空
+		      </button>
+		    </footer>
+		  </section>
+		  <!-- 底部 -->
+		  <footer class="info">
+		    <p>
+		      <a href="#">&copy;tanhong</a>
+		    </p>
+		  </footer>
+		  <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+		  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+		<script src="js/h27.js" type="text/javascript" charset="utf-8"></script>
+		</body>
+	</body>
+</html>
